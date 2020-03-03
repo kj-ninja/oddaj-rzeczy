@@ -1,0 +1,8 @@
+@import "reset";
+@import "./settings/fonts";
+@import "./settings/colors";
+
+body {
+  background-color: #bada55;
+  font-family: $font-base;
+}
