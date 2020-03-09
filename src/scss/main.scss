@@ -1,8 +1,12 @@
 @import "reset";
 @import "./settings/fonts";
 @import "./settings/colors";
+@import "./settings/mixins";
 
 body {
-  background-color: #bada55;
+  padding-top: 56px;
   font-family: $font-base;
+  @include desktop() {
+    padding-top: 0;
+  }
 }

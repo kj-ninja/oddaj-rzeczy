@@ -1,10 +1,13 @@
 import React from 'react';
+import Menu from "../Menu/Menu";
+import HeroSection from "../HeroSection/HeroSection";
 
 const Header = () => {
     return (
-        <div>
-            Header component
-        </div>
+        <>
+            <Menu />
+            <HeroSection />
+        </>
     );
 };
 

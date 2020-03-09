@@ -1,0 +1,47 @@
+@import "../../scss/settings/mixins";
+
+.hero__section--container {
+  display: none;
+}
+
+@include desktop() {
+  .jumbotron {
+    display: none;
+  }
+
+  .hero__section--container {
+    max-width: 1750px;
+    position: relative;
+    top: -50px;
+    display: block;
+    .hero__section--image {
+      background-image: url("../../assets/Home-Hero-Image.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+      height: 50vh;
+      z-index: -1;
+    }
+    .hero__section--action {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      h1 {
+        font-size: 2.375rem;
+        margin-bottom: 120px;
+      }
+      .hero_section--buttons {
+        display: flex;
+        justify-content: space-evenly;
+        button {
+          width: 230px;
+          padding: 1rem 3.5rem;
+        }
+      }
+
+    }
+  }
+}
+
+

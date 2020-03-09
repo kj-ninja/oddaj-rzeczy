@@ -1,0 +1,38 @@
+@import "../../scss/settings/mixins";
+@import "../../scss/settings/colors";
+
+.navbar__buttons-container--mobile {
+  button {
+    margin-right: 16px;
+  }
+}
+
+.navbar__buttons-container--desktop {
+  display: none;
+}
+
+.navbar__desktop {
+  display: none;
+}
+
+@include desktop() {
+  .navbar__mobile {
+    display: none;
+  }
+
+  .navbar__buttons-container--desktop {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+    button {
+      margin-right: 16px;
+    }
+  }
+
+  .navbar__desktop {
+    display: flex;
+    a {
+      color: $font-color;
+    }
+  }
+}
