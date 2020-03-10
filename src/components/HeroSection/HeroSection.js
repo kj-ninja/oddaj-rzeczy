@@ -11,22 +11,22 @@ import {Link} from "react-router-dom";
 const HeroSection = () => {
     return (
         <>
-            <Jumbotron>
-                <h1>Masz w domu rzeczy, z którymi nie wiesz co zrobić?</h1>
-                <p>
-                    ODDAJ JE POTRZEBUJĄCYM - szybko i w zaufane ręce
+            <Jumbotron className="hero-section__container--mobile">
+                <h1 className="hero-section__title--mobile">Masz w domu rzeczy, z którymi nie wiesz co zrobić?</h1>
+                <p className="hero-section__para--mobile">
+                    <span>ODDAJ JE POTRZEBUJĄCYM</span> - szybko i w zaufane ręce
                 </p>
-                <p>
+                <p className="hero-section__btn--mobile">
                     <Link to="/rejestracja"><Button variant="outline-primary">Załóż konto</Button></Link>
                 </p>
             </Jumbotron>
 
-            <Container className="hero__section--container">
+            <Container className="hero-section__container">
                 <Row>
-                    <Col className="hero__section--image"/>
-                    <Col className="hero__section--action">
+                    <Col className="hero-section__image"/>
+                    <Col className="hero-section__action">
                         <h1>Zacznij pomagać!<br/> Oddaj niechciane rzeczy w zaufane ręce</h1>
-                        <div className="hero_section--buttons">
+                        <div className="hero-section__buttons">
                             <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button></Link>
                             <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ZORGANIZUJ ZBIÓRKĘ</Button></Link>
                         </div>
