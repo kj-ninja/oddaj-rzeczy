@@ -11,7 +11,7 @@ const ThreeColumns = () => {
                 <Row>
                     <Col md={12} lg={4}>
                         <div className="three-columns__column">
-                            <h2>10</h2>
+                            <h3>10</h3>
                             <div>ODDANYCH WORKÓW</div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
                                 elementuma. Aliquam erat volutpat.</p>
@@ -19,16 +19,16 @@ const ThreeColumns = () => {
                     </Col>
                     <Col md={12} lg={4}>
                         <div className="three-columns__column">
-                            <h2>10</h2>
-                            <div>ODDANYCH WORKÓW</div>
+                            <h3>5</h3>
+                            <div>WSPARTYCH ORGANIZACJI</div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
                                 elementuma. Aliquam erat volutpat.</p>
                         </div>
                     </Col>
                     <Col md={12} lg={4}>
                         <div className="three-columns__column">
-                            <h2>10</h2>
-                            <div>ODDANYCH WORKÓW</div>
+                            <h3>7</h3>
+                            <div>ZORGANIZOWANY ZBIÓREK</div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
                                 elementuma. Aliquam erat volutpat.</p>
                         </div>

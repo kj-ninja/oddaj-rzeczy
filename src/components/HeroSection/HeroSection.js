@@ -26,6 +26,7 @@ const HeroSection = () => {
                     <Col className="hero-section__image"/>
                     <Col className="hero-section__action">
                         <h1>Zacznij pomagać!<br/> Oddaj niechciane rzeczy w zaufane ręce</h1>
+                        <img src={require("../../assets/Decoration.svg")} alt=""/>
                         <div className="hero-section__buttons">
                             <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button></Link>
                             <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ZORGANIZUJ ZBIÓRKĘ</Button></Link>
