@@ -3,12 +3,13 @@ import './SimpleSteps.scss';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 const SimpleSteps = () => {
     return (
         <>
             <div className="simple-steps__header">
-                <h2 className="simple-steps__title">Wystarczą 4 proste kroki</h2>
+                <h2>Wystarczą 4 proste kroki</h2>
                 <img src={require("../../assets/Decoration.svg")} alt=""/>
             </div>
             <div className="simple-steps__background">
@@ -48,6 +49,9 @@ const SimpleSteps = () => {
                         </Col>
                     </Row>
                 </Container>
+            </div>
+            <div className="simple-steps__button-container">
+                <Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button>
             </div>
         </>
     );
