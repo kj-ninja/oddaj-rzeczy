@@ -35,7 +35,7 @@
 @include desktop() {
   .about__container {
     .about__info {
-      padding: 185px 20px;
+      padding: 35px 20px;
       height: 60vh;
       p {
         font-size: 1.875rem;
@@ -43,10 +43,8 @@
         margin-top: 40px;
       }
       .about__info--signature {
+        align-self: flex-end;
         margin-top: 30px;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 100px;
         background-color: $background;;
       }
     }
