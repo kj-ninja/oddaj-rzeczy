@@ -2,15 +2,14 @@ import React from 'react';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import './HeroSection.scss';
 import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import {Link} from "react-router-dom";
-
+import './HeroSection.scss';
 
 const HeroSection = () => {
     return (
-        <>
+        <section className="hero">
             <Jumbotron className="hero__container--mobile">
                 <h1 className="hero__title--mobile">Masz w domu rzeczy, z którymi nie wiesz co zrobić?</h1>
                 <p className="hero__para--mobile">
@@ -34,7 +33,7 @@ const HeroSection = () => {
                     </Col>
                 </Row>
             </Container>
-        </>
+        </section>
     )
 };
 

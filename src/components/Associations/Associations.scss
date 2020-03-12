@@ -1,0 +1,74 @@
+@import "../../scss/settings/mixins";
+
+.associations {
+  text-align: center;
+  h2 {
+    @include header() {
+      margin: 70px 0 20px 0;
+    }
+  }
+  img {
+    margin-bottom: 50px;
+  }
+  .associations__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
+    button {
+      width: 110px;
+      line-height: 20px;
+      font-size: 0.85rem;
+      padding: .5rem 0.25rem
+    }
+  }
+}
+
+@include tablet() {
+  .associations {
+    h2 {
+      @include header() {
+        margin: 70px 0 20px 0;
+      }
+    }
+    img {
+      margin-bottom: 50px;
+    }
+    .associations__buttons {
+      display: flex;
+      justify-content: space-evenly;
+      button {
+        width: 160px;
+        line-height: 20px;
+        font-size: 1rem;
+        padding: .5rem 0.5rem
+      }
+    }
+  }
+}
+
+@include desktop() {
+  .associations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      @include header() {
+        margin: 70px 0 20px 0;
+      }
+    }
+    img {
+      margin-bottom: 50px;
+    }
+    .associations__buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 700px;
+      button {
+        width: 200px;
+        line-height: 20px;
+        font-size: 1.4rem;
+        padding: 1.25rem 1rem
+      }
+    }
+  }
+}

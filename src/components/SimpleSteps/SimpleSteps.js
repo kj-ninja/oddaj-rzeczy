@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 const SimpleSteps = () => {
     return (
-        <>
+        <section className="simple-steps">
             <div className="simple-steps__header">
                 <h2>Wystarczą 4 proste kroki</h2>
                 <img src={require("../../assets/Decoration.svg")} alt=""/>
@@ -54,7 +54,7 @@ const SimpleSteps = () => {
             <div className="simple-steps__button-container">
                 <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button></Link>
             </div>
-        </>
+        </section>
     );
 };
 

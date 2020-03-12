@@ -6,7 +6,7 @@ import './ThreeColumns.scss';
 
 const ThreeColumns = () => {
     return (
-        <div className="three-columns__background">
+        <div className="three-columns">
             <Container className="three-columns__container">
                 <Row>
                     <Col md={12} lg={4}>
