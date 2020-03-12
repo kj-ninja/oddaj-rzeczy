@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link as ScrollLink} from "react-scroll";
+import {Link} from 'react-router-dom';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
-import './Menu.scss';
 import Container from "react-bootstrap/Container";
-import {Link} from 'react-router-dom';
+import './Menu.scss';
 
 
 const Menu= () => {
@@ -17,25 +18,14 @@ const Menu= () => {
                 </div>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home">Start</Nav.Link>
-                        <Nav.Link href="#link">O co chodzi?</Nav.Link>
-                        <Nav.Link href="#link">O nas</Nav.Link>
+                        <ScrollLink className="nav-link" to="start" spy={true} smooth={true} offset={-45} duration={500}>Start</ScrollLink>
+                        <ScrollLink className="nav-link" to="steps" spy={true} smooth={true} offset={-100} duration={500}>O co chodzi?</ScrollLink>
+                        <ScrollLink className="nav-link" to="about" spy={true} smooth={true} offset={-55} duration={500}>O nas</ScrollLink>
                         <Nav.Link href="#link">Fundacja i organizacje</Nav.Link>
                         <Nav.Link href="#link">Kontakt</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-
-
-            {/*<Link activeClass="active" to="firstInsideContainer" spy={true} smooth={true} duration={250} containerId="containerElement" style={{ display: 'inline-block', margin: '20px' }}>*/}
-            {/*    Go to first element inside container*/}
-            {/*</Link>*/}
-
-            {/*<Element name="scroll-container-first-element" style={{*/}
-            {/*    marginBottom: '200px'*/}
-            {/*}}>*/}
-            {/*    first element inside container*/}
-            {/*</Element>*/}
 
             <div className="navbar__buttons--desktop">
                 <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj</Button></Link>
@@ -43,13 +33,13 @@ const Menu= () => {
             </div>
             <Nav className="justify-content-end navbar__desktop">
                 <Nav.Item>
-                    <Nav.Link href="/home">Start</Nav.Link>
+                    <Nav.Link href="/">Start</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-1">O co chodzi?</Nav.Link>
+                    <ScrollLink className="nav-link" to="steps" spy={true} smooth={true} offset={-30} duration={500}>O co chodzi?</ScrollLink>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-2">O nas</Nav.Link>
+                    <ScrollLink className="nav-link" to="about" spy={true} smooth={true} duration={500}>O nas</ScrollLink>
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link eventKey="link-2">Fundacja i organizacje</Nav.Link>
