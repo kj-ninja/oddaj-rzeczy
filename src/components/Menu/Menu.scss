@@ -1,13 +1,13 @@
 @import "../../scss/settings/mixins";
 @import "../../scss/settings/colors";
 
-.navbar__buttons-container--mobile {
+.navbar__buttons--mobile {
   button {
     margin-right: 16px;
   }
 }
 
-.navbar__buttons-container--desktop {
+.navbar__buttons--desktop {
   display: none;
 }
 
@@ -20,7 +20,7 @@
     display: none;
   }
 
-  .navbar__buttons-container--desktop {
+  .navbar__buttons--desktop {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 25px;
@@ -30,6 +30,8 @@
   }
 
   .navbar__desktop {
+    position: relative;
+    z-index: 1000;
     display: flex;
     a {
       color: $font-color;

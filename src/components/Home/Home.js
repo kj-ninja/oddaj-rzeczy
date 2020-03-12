@@ -1,15 +1,19 @@
 import React from 'react';
-import Header from "../Header/Header";
+import Menu from "../Menu/Menu";
+import HeroSection from "../HeroSection/HeroSection";
 import ThreeColumns from "../ThreeColumns/ThreeColumns";
 import SimpleSteps from "../SimpleSteps/SimpleSteps";
+import About from "../About/About";
 
 
 const Home = () => {
     return (
         <>
-            <Header/>
+            <Menu/>
+            <HeroSection/>
             <ThreeColumns/>
             <SimpleSteps/>
+            <About/>
         </>
     );
 };

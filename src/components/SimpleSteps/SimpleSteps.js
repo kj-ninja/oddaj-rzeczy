@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import {Link} from "react-router-dom";
 
 const SimpleSteps = () => {
     return (
@@ -51,7 +52,7 @@ const SimpleSteps = () => {
                 </Container>
             </div>
             <div className="simple-steps__button-container">
-                <Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button>
+                <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button></Link>
             </div>
         </>
     );

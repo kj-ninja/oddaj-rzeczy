@@ -1,12 +1,12 @@
 @import "../../scss/settings/mixins";
 
-.hero-section__container--mobile {
+.hero__container--mobile {
   text-align: center;
-  .hero-section__title--mobile {
+  .hero_title--mobile {
     font-size: 1.15rem;
     margin-bottom: 30px;
   }
-  .hero-section__para--mobile {
+  .hero__para--mobile {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 15px;
@@ -14,7 +14,7 @@
       font-size: 1.5rem;
     }
   }
-  .hero-section__btn--mobile {
+  .hero__btn--mobile {
     display: flex;
     justify-content: flex-end;
     button {
@@ -24,20 +24,20 @@
   }
 }
 
-.hero-section__container {
+.hero__container {
   display: none;
 }
+
 @include desktop() {
   .jumbotron {
     display: none;
   }
-
-  .hero-section__container {
+  .hero__container {
     max-width: 1750px;
     position: relative;
     top: -50px;
     display: block;
-    .hero-section__image {
+    .hero__image {
       background-image: url("../../assets/Home-Hero-Image.jpg");
       background-repeat: no-repeat;
       background-size: cover;
@@ -45,7 +45,7 @@
       height: 50vh;
       z-index: -1;
     }
-    .hero-section__action {
+    .hero__action {
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -58,7 +58,7 @@
       img {
         margin-bottom: 65px;
       }
-      .hero-section__buttons {
+      .hero__buttons {
         display: flex;
         justify-content: space-evenly;
         button {
@@ -66,7 +66,6 @@
           padding: 1rem 3.5rem;
         }
       }
-
     }
   }
 }

@@ -6,12 +6,13 @@ import './Menu.scss';
 import Container from "react-bootstrap/Container";
 import {Link} from 'react-router-dom';
 
+
 const Menu= () => {
     return (
         <Container style={{maxWidth: '1500px'}}>
             <Navbar fixed="top" bg="light" expand="lg" className="navbar__mobile">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <div className="navbar__buttons-container--mobile">
+                <div className="navbar__buttons--mobile">
                     <Link to="/logowanie"><Button variant="outline-primary">Zaloguj</Button></Link>
                 </div>
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -25,7 +26,18 @@ const Menu= () => {
                 </Navbar.Collapse>
             </Navbar>
 
-            <div className="navbar__buttons-container--desktop">
+
+            {/*<Link activeClass="active" to="firstInsideContainer" spy={true} smooth={true} duration={250} containerId="containerElement" style={{ display: 'inline-block', margin: '20px' }}>*/}
+            {/*    Go to first element inside container*/}
+            {/*</Link>*/}
+
+            {/*<Element name="scroll-container-first-element" style={{*/}
+            {/*    marginBottom: '200px'*/}
+            {/*}}>*/}
+            {/*    first element inside container*/}
+            {/*</Element>*/}
+
+            <div className="navbar__buttons--desktop">
                 <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj</Button></Link>
                 <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>
             </div>
