@@ -123,6 +123,10 @@ const Associations = () => {
     ]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(3);
+    const [isFoundationsActive, setIsFoundationsActive] = useState(true);
+    const [isOrganizationsActive, setisOrganizationsActive] = useState(false);
+    const [isLocalsActive, setisLocalsActive] = useState(false);
+
 
     function getCurrentFoundation() {
         const indexOfLastFoundation = currentPage * postsPerPage;
@@ -142,12 +146,52 @@ const Associations = () => {
         return locals.slice(indexOfFirstLocal, indexOfLastLocal);
     }
 
-
     // Change page
     const handlePaginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const handleFoundations = () => {
+    let result;
+    if (association === 'foundations') {
+        result = (
+            <>
+                <Foundations foundations={getCurrentFoundation()}/>
+                <Pagination postsPerPage={postsPerPage} totalPosts={foundations.length} paginate={handlePaginate}/>
+            </>
+        )
+    } else if (association === 'organizations') {
+        result = (
+            <>
+                <Organizations organizations={getCurrentOrganization()}/>
+                <Pagination postsPerPage={postsPerPage} totalPosts={organizations.length} paginate={handlePaginate}/>
+            </>
+        )
+    } else if (association === 'locals') {
+        result = (
+            <>
+                <Locals locals={getCurrentLocal()}/>
+                <Pagination postsPerPage={postsPerPage} totalPosts={locals.length} paginate={handlePaginate}/>
+            </>
+        )
+    }
 
+    const handleFoundations = () => {
+        setAssociation('foundations');
+        setIsFoundationsActive(true);
+        setisOrganizationsActive(false);
+        setisLocalsActive(false);
+    };
+
+    const handleOrganizations = () => {
+        setAssociation('organizations');
+        setIsFoundationsActive(false);
+        setisOrganizationsActive(true);
+        setisLocalsActive(false);
+    };
+
+    const handleLocals = () => {
+        setAssociation('locals');
+        setIsFoundationsActive(false);
+        setisOrganizationsActive(false);
+        setisLocalsActive(true);
     };
 
 
@@ -156,20 +200,11 @@ const Associations = () => {
             <h2>Komu pomagamy?</h2>
             <img src={require("../../assets/Decoration.svg")} alt=""/>
             <div className="associations__buttons">
-                <Button onClick={() => handleFoundations} variant="outline-secondary" size="lg">Fundacjom</Button>
-                <Button variant="outline-secondary" size="lg">Organizacjom pozarządowym</Button>
-                <Button variant="outline-secondary" size="lg">Lokalnym zbiórkom</Button>
+                <Button onClick={() => handleFoundations()} variant="outline-secondary" size="lg" className={isFoundationsActive ? 'active' : ''}>Fundacjom</Button>
+                <Button onClick={() => handleOrganizations()} variant="outline-secondary" size="lg" className={isOrganizationsActive ? 'active' : ''}>Organizacjom pozarządowym</Button>
+                <Button onClick={() => handleLocals()} variant="outline-secondary" size="lg" className={isLocalsActive ? 'active' : ''}>Lokalnym zbiórkom</Button>
             </div>
-
-            <Foundations foundations={getCurrentFoundation()} />
-            <Pagination postsPerPage={postsPerPage} totalPosts={foundations.length} paginate={handlePaginate} />
-
-            {/*<Organizations organizations={getCurrentOrganization()} />*/}
-            {/*<Pagination postsPerPage={postsPerPage} totalPosts={organizations.length} paginate={handlePaginate} />*/}
-
-            {/*<Locals locals={getCurrentLocal()}/>*/}
-            {/*<Pagination postsPerPage={postsPerPage} totalPosts={locals.length} paginate={handlePaginate}/>*/}
-
+            {result}
         </section>
     );
 };
