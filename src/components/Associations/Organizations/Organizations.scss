@@ -1,15 +1,15 @@
 @import '../../../scss/settings/fonts';
 
-.foundations {
+.organizations {
   width: 1344px;
-  .foundations__info {
+  .organizations__info {
     margin: 0 auto 66px auto;
     max-width: 600px;
     font-size: 1.375rem;
     line-height: 30px;
   }
-  .foundations__container {
-    .foundations__row {
+  .organizations__container {
+    .organizations__row {
       border-bottom: 1px solid black;
       margin-bottom: 30px;
       &:last-of-type {
@@ -30,7 +30,7 @@
       font-weight: 300;
       font-style: italic;
     }
-    .foundations__details {
+    .organizations__details {
       font-style: normal;
       margin: auto 0;
     }

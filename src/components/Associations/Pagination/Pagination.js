@@ -1,29 +1,27 @@
-// import React from 'react';
-//
-// const Pagination = () => {
-//
-//     let active = 1;
-//     let items = [];
-//     for (let number = 1; number <= 5; number++) {
-//         items.push(
-//             <Pagination.Item key={number} active={number === active}>
-//                 {number}
-//             </Pagination.Item>,
-//         );
-//     }
-//
-//     const paginationBasic = (
-//         <div>
-//             <Pagination>{items}</Pagination>
-//             <br />
-//         </div>
-//     );
-//
-//     return (
-//         <>
-//             {paginationBasic}
-//         </>
-//     );
-// };
-//
-// export default Pagination;
+import React from 'react';
+import Button from "react-bootstrap/Button";
+
+const Pagination = ({postsPerPage, totalPosts, paginate}) => {
+    const pageNumbers = [];
+
+    if (totalPosts <= 3) {
+        return null;
+    }
+    for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+        pageNumbers.push(i)
+    }
+
+    return (
+        <nav>
+            <ul className="pagination d-flex justify-content-center">
+                {pageNumbers.map(number => (
+                    <li key={number} className="page-item">
+                        <Button onClick={() => paginate(number)} variant="outline-secondary">{number}</Button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+};
+
+export default Pagination;
