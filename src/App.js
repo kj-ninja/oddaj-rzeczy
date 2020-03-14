@@ -1,13 +1,12 @@
 import React from 'react';
-import '../../scss/main.scss';
+import './scss/main.scss';
 import {
     HashRouter,
     Route,
     Switch,
 } from 'react-router-dom';
-import NotFound from "../NotFound/NotFound";
-import Home from "../Home/Home";
-
+import Home from "./components/Home/Home";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
     return (

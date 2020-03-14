@@ -9,8 +9,10 @@ const Organizations = ({organizations}) => {
 
     return (
         <section className="organizations">
-            <p className="organizations__info">{organizations[0].info}</p>
-            {organizations.map((organization, i)=>{
+            <p className="organizations__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation.</p>
+            {organizations.map((organization, i) => {
                 return (
                     <Container key={i} fluid className="organizations__container">
                         <Row className="organizations__row">

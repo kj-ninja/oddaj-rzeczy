@@ -1,4 +1,4 @@
-@import "../../scss/settings/mixins";
+@import "../../../scss/settings/mixins";
 
 .hero__container--mobile {
   text-align: center;
@@ -38,7 +38,7 @@
     top: -50px;
     display: block;
     .hero__image {
-      background-image: url("../../assets/Home-Hero-Image.jpg");
+      background-image: url("../../../assets/Home-Hero-Image.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: right;

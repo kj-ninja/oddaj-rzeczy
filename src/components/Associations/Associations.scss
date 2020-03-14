@@ -51,6 +51,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 190px;
     h2 {
       @include header() {
         margin: 70px 0 20px 0;

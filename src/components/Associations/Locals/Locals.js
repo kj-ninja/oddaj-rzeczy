@@ -8,8 +8,9 @@ import Col from "react-bootstrap/Col";
 const Locals = ({locals}) => {
     return (
         <section className="locals">
-            <p className="locals__info">{locals[0].info}</p>
-            {locals.map((local, i)=>{
+            <p className="locals__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            {locals.map((local, i) => {
                 return (
                     <Container key={i} fluid className="locals__container">
                         <Row className="locals__row">

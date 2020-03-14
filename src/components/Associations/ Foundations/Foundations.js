@@ -9,8 +9,9 @@ const Foundations = ({foundations}) => {
 
     return (
         <section className="foundations">
-            <p className="foundations__info">{foundations[0].info}</p>
-            {foundations.map((foundation, i)=>{
+            <p className="foundations__info">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
+                współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
+            {foundations.map((foundation, i) => {
                 return (
                     <Container key={i} fluid className="foundations__container">
                         <Row className="foundations__row">

@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './scss/main.scss';
-import App from './components/App/App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
+import fire from "./components/Firebase/Firebase";
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
