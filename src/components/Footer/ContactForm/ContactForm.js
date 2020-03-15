@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import './ContactForm.scss';
 import Button from "react-bootstrap/Button";
 
-const ContactForm = () => {
+const ContactForm = ({setIsSuccess}) => {
+
     return (
         <Formik
             initialValues={{
-                firstName: 'Krzysztof',
+                name: 'Krzysztof',
                 email: 'abc@xyz.pl',
                 message: 'LLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.' +
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.' +
@@ -16,7 +18,7 @@ const ContactForm = () => {
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
             }}
             validationSchema={Yup.object({
-                firstName: Yup.string()
+                name: Yup.string()
                     .matches(/^\S*$/, 'Imię powinno być jednym wyrazem')
                     .max(15, 'Must be 15 characters or less')
                     .required('Pole wymagane'),
@@ -27,20 +29,25 @@ const ContactForm = () => {
                     .min(120, 'Wiadomość musi mieć conajmniej 120 znaków')
                     .required('Pole wymagane'),
             })}
-            onSubmit={(values, {setSubmitting}) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                }, 400);
+            onSubmit={(values) => {
+                console.log(JSON.stringify(values));
+                axios.post(`https://fer-api.coderslab.pl/v1/portfolio/contact`, JSON.stringify(values), {"headers": {
+                        "Content-Type": "application/json"
+                    }})
+                    .then(res => {
+                        setIsSuccess(true);
+                        console.log(res);
+                        console.log(res.data);
+                    });
             }}
         >
             <Form className="contact-form">
                 <div className="contact-form__user">
                     <div className="contact-form__name">
-                        <label htmlFor="firstName">Wpisz swoje imię</label>
-                        <Field name="firstName" type="text"/>
+                        <label htmlFor="name">Wpisz swoje imię</label>
+                        <Field name="name" type="text"/>
                         <p className="error-message">
-                            <ErrorMessage name="firstName"/>
+                            <ErrorMessage name="name"/>
                         </p>
                     </div>
                     <div className="contact-form__email">

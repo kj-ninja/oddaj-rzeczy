@@ -18,8 +18,13 @@
 
       }
     }
-    img {
-      margin-bottom: 70px;
+    .success-message {
+      width: 260px;
+      text-align: center;
+      color: green;
+      font-weight: 600;
+      line-height: 20px;
+      margin: 20px 0 20px 0;
     }
   }
 }

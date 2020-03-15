@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link as ScrollLink} from "react-scroll";
 import {Link} from 'react-router-dom';
 import Navbar from "react-bootstrap/Navbar";
@@ -8,7 +8,35 @@ import Container from "react-bootstrap/Container";
 import './Menu.scss';
 
 
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+
+
+
 const Menu= () => {
+    const [loggedUser, setUser] = useState(null);
+
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        console.log(user.email);
+        if (user) {
+            console.log('zalogowano');
+            setUser(user);
+        } else {
+            console.log('wylogowano');
+            setUser(null);
+        }
+    });
+
+    // handleWyloguj => {
+    //     firebase.auth().signOut().then(function() {
+    //         // Sign-out successful.
+    //     }).catch(function(error) {
+    //         // An error happened.
+    //     })
+    // }
+
     return (
         <Container style={{maxWidth: '1500px'}}>
             <Navbar fixed="top" bg="light" expand="lg" className="navbar__mobile">
@@ -45,7 +73,7 @@ const Menu= () => {
                     <ScrollLink className="nav-link" to="associations" spy={true} smooth={true} duration={500}>Fundacja i organizacje</ScrollLink>
                 </Nav.Item>
                 <Nav.Item>
-                    <ScrollLink className="nav-link" to="associations" spy={true} smooth={true} duration={500}>Kontakt</ScrollLink>
+                    <ScrollLink className="nav-link" to="contact" spy={true} smooth={true} duration={500}>Kontakt</ScrollLink>
                 </Nav.Item>
             </Nav>
         </Container>
