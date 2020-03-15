@@ -12,11 +12,4 @@ var firebaseConfig = {
 const fire = firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-// Get users from db
-// db.collection("foundations").get().then((DocumentSnapshot) => {
-//     DocumentSnapshot.forEach((doc) => {
-//         console.log(doc.data().name);
-//     });
-// });
-
 export {fire, db};

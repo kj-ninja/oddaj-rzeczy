@@ -1,0 +1,25 @@
+@import '../../scss/settings/mixins';
+
+.footer__container {
+  max-width: 1850px;
+  .footer__img {
+    background-image: url("../../assets/Background-Contact-Form.jpg");
+    height: 80vh;
+    background-color: #fff;
+  }
+  .footer__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 200px;
+    h2 {
+      @include header() {
+
+      }
+    }
+    img {
+      margin-bottom: 70px;
+    }
+  }
+}

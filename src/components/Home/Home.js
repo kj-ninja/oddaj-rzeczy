@@ -5,6 +5,7 @@ import ThreeColumns from "../ThreeColumns/ThreeColumns";
 import SimpleSteps from "../SimpleSteps/SimpleSteps";
 import About from "../About/About";
 import Associations from "../Associations/Associations";
+import Footer from "../Footer/Footer";
 
 const Element = Scroll.Element;
 
@@ -17,6 +18,7 @@ const Home = () => {
             <Element name="steps"><SimpleSteps/></Element>
             <Element name="about"><About/></Element>
             <Element name="associations"><Associations/></Element>
+            <Element name="contact"><Footer/></Element>
         </>
     );
 };

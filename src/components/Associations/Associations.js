@@ -7,7 +7,6 @@ import Organizations from "./Organizations/Organizations";
 import Locals from "./Locals/Locals";
 import {fire, db} from '../Firebase/Firebase';
 
-
 const Associations = () => {
     const [association, setAssociation] = useState('foundations');
     const [foundations, setFoundations] = useState([]);

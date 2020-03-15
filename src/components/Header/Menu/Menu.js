@@ -22,7 +22,7 @@ const Menu= () => {
                         <ScrollLink className="nav-link" to="steps" spy={true} smooth={true} offset={-100} duration={500}>O co chodzi?</ScrollLink>
                         <ScrollLink className="nav-link" to="about" spy={true} smooth={true} offset={-55} duration={500}>O nas</ScrollLink>
                         <ScrollLink className="nav-link" to="about" spy={true} smooth={true} offset={-55} duration={500}>Fundacja i organizacje</ScrollLink>
-                        <Nav.Link href="#link">Kontakt</Nav.Link>
+                        <ScrollLink className="nav-link" to="about" spy={true} smooth={true} offset={-55} duration={500}>Kontakt</ScrollLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -45,7 +45,7 @@ const Menu= () => {
                     <ScrollLink className="nav-link" to="associations" spy={true} smooth={true} duration={500}>Fundacja i organizacje</ScrollLink>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-2">Kontakt</Nav.Link>
+                    <ScrollLink className="nav-link" to="associations" spy={true} smooth={true} duration={500}>Kontakt</ScrollLink>
                 </Nav.Item>
             </Nav>
         </Container>
