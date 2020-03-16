@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './LogIn.scss';
+import './Login.scss';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import * as firebase from "firebase/app";
@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router';
 import {translate} from '../../functions/translate';
 
-const LogIn = () => {
+const Login = () => {
     const [errorMessage, setErrorMessage] = useState(null);
 
     return (
@@ -34,7 +34,9 @@ const LogIn = () => {
                         firebase.auth().signInWithEmailAndPassword(values.email, values.password)
                             .then(res => {
                                 console.log('zalogowano');
-                                return <Redirect exact to="/" />
+                                // TODO: to jest kupa jak to zmienic na Redirect z React router dom ????
+                                window.location.href = 'http://localhost:3000/#/';
+                                // return <Redirect exact to="/" />
                             })
                             .catch(function (error) {
                                 setErrorMessage(translate(error.code));
@@ -65,4 +67,4 @@ const LogIn = () => {
     );
 };
 
-export default LogIn;
+export default Login;

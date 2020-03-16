@@ -13,26 +13,33 @@ import "firebase/firestore";
 
 const Menu= () => {
     const [loggedUser, setLoggedUser] = useState(null);
+    let result = null;
 
+    if (loggedUser) {
+        result = (
+            <div className="navbar__buttons--welcome">
+                Cześć {loggedUser.email}!
+            </div>
+        )
+    }
 
     firebase.auth().onAuthStateChanged(function(user) {
-        console.log(user.email);
         if (user) {
             console.log('zalogowano');
             setLoggedUser(user);
         } else {
-            console.log('wylogowano');
             setLoggedUser(null);
         }
     });
 
-    // handleWyloguj => {
-    //     firebase.auth().signOut().then(function() {
-    //         // Sign-out successful.
-    //     }).catch(function(error) {
-    //         // An error happened.
-    //     })
-    // }
+    const handleLogout = () => {
+        firebase.auth().signOut().then(function() {
+            console.log('wylogowano');
+            setLoggedUser(null);
+        }).catch(function(error) {
+            console.log(error.message);
+        })
+    };
 
     return (
         <Container style={{maxWidth: '1500px'}}>
@@ -53,8 +60,9 @@ const Menu= () => {
             </Navbar>
 
             <div className="navbar__buttons--desktop">
-                <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj się</Button></Link>
-                <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>
+                {loggedUser ? result : null}
+                {loggedUser ? <Link to="/oddajRzeczy"><Button variant="outline-secondary">Oddaj rzeczy</Button></Link> : <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj się</Button></Link>}
+                {loggedUser ? <Link to="/wylogowano"><Button onClick={()=>handleLogout()} variant="outline-secondary">Wyloguj</Button></Link> : <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>}
             </div>
             <Nav className="justify-content-end navbar__desktop">
                 <Nav.Item>

@@ -6,9 +6,10 @@ import {
     Switch,
 } from 'react-router-dom';
 import Home from "./components/Home/Home";
-import NotFound from "./components/NotFound/NotFound";
-import LogIn from "./components/LogIn/LogIn";
+import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
+import Logout from "./components/Logout/Logout";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
     return (
@@ -16,8 +17,9 @@ function App() {
             <HashRouter>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/logowanie" component={LogIn}/>
+                    <Route path="/logowanie" component={Login}/>
                     <Route path="/rejestracja" component={SignUp}/>
+                    <Route path="/wylogowano" component={Logout} />
                     <Route component={NotFound}/>
                 </Switch>
             </HashRouter>

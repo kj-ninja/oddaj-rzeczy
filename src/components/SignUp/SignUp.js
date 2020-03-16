@@ -41,7 +41,11 @@ function SignUp() {
                 }}
                 validationSchema={Schema}
                 onSubmit={(values) => {
-                    firebase.auth().createUserWithEmailAndPassword(values.email, values.password).catch(function(error) {
+                    firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
+                        .then(res => {
+                            window.location.href = 'http://localhost:3000/#/';
+                        })
+                        .catch(function(error) {
                         // Handle Errors here.
                         setErrorMessage(translate(error.code));
                         // const errorCode = error.code;
