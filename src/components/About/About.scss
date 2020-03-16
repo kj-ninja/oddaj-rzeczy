@@ -34,6 +34,7 @@
 
 @include desktop() {
   .about__container {
+    box-shadow: 0px -5px 30px #00000029;
     .about__info {
       padding: 35px 20px;
       height: 60vh;
@@ -49,7 +50,13 @@
       }
     }
     .about__image {
-      order: 10;
+      order: -1;
     }
+  }
+}
+
+@include xl() {
+  .about__image {
+    order: 10 !important;
   }
 }

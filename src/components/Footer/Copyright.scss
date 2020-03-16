@@ -1,0 +1,21 @@
+.footer__copyright {
+  position: relative;
+  height: 50px;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  span {
+    position: absolute;
+    right: 45%;
+  }
+  ul {
+    display: flex;
+    li {
+      margin-left: 20px;
+    }
+  }
+}

@@ -1,11 +1,11 @@
 import React from 'react';
+import './HeroSection.scss';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import {Link} from "react-router-dom";
-import './HeroSection.scss';
 
 const HeroSection = () => {
     return (

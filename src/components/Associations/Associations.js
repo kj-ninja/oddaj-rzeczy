@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import Button from "react-bootstrap/Button";
 import './Associations.scss';
 import Foundations from "./ Foundations/Foundations";
-import Pagination from "./Pagination/Pagination";
 import Organizations from "./Organizations/Organizations";
 import Locals from "./Locals/Locals";
-import {fire, db} from '../Firebase/Firebase';
+import Pagination from "./Pagination/Pagination";
+import AssociationsDesktop from "./AssociationsDesktop";
+import {db} from '../Firebase/Firebase';
+import AssociationsMobile from "./AssociationsMobile";
 
 const Associations = () => {
     const [association, setAssociation] = useState('foundations');
@@ -14,9 +15,6 @@ const Associations = () => {
     const [locals, setLocals] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(3);
-    const [isFoundationsActive, setIsFoundationsActive] = useState(true);
-    const [isOrganizationsActive, setIsOrganizationsActive] = useState(false);
-    const [isLocalsActive, setIsLocalsActive] = useState(false);
 
     useEffect(()=> {
         console.log('fetch');
@@ -93,39 +91,13 @@ const Associations = () => {
         )
     }
 
-    const handleFoundations = () => {
-        setCurrentPage(1);
-        setAssociation('foundations');
-        setIsFoundationsActive(true);
-        setIsOrganizationsActive(false);
-        setIsLocalsActive(false);
-    };
-    const handleOrganizations = () => {
-        setCurrentPage(1);
-        setAssociation('organizations');
-        setIsFoundationsActive(false);
-        setIsOrganizationsActive(true);
-        setIsLocalsActive(false);
-    };
-    const handleLocals = () => {
-        setCurrentPage(1);
-        setAssociation('locals');
-        setIsFoundationsActive(false);
-        setIsOrganizationsActive(false);
-        setIsLocalsActive(true);
-    };
 
     return (
-        <section className="associations">
-            <h2>Komu pomagamy?</h2>
-            <img src={require("../../assets/Decoration.svg")} alt=""/>
-            <div className="associations__buttons">
-                <Button onClick={() => handleFoundations()} variant="outline-secondary" size="lg" className={isFoundationsActive ? 'active' : ''}>Fundacjom</Button>
-                <Button onClick={() => handleOrganizations()} variant="outline-secondary" size="lg" className={isOrganizationsActive ? 'active' : ''}>Organizacjom pozarządowym</Button>
-                <Button onClick={() => handleLocals()} variant="outline-secondary" size="lg" className={isLocalsActive ? 'active' : ''}>Lokalnym zbiórkom</Button>
-            </div>
-            {result}
-        </section>
+        <>
+            <AssociationsMobile />
+            <AssociationsDesktop result={result} setAssociation={setAssociation} setCurrentPage={setCurrentPage} />
+
+        </>
     );
 };
 

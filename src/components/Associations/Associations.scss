@@ -1,6 +1,10 @@
 @import "../../scss/settings/mixins";
 
-.associations {
+.associations__desktop {
+  display: none;
+}
+
+.associations__mobile {
   text-align: center;
   h2 {
     @include header() {
@@ -10,10 +14,10 @@
   img {
     margin-bottom: 50px;
   }
-  .associations__buttons {
+  .associations__mobile--buttons {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     button {
       width: 110px;
       line-height: 20px;
@@ -24,34 +28,30 @@
 }
 
 @include tablet() {
-  .associations {
-    h2 {
-      @include header() {
-        margin: 70px 0 20px 0;
-      }
-    }
-    img {
-      margin-bottom: 50px;
-    }
-    .associations__buttons {
+  .associations__mobile {
+    .associations__mobile--buttons {
       display: flex;
       justify-content: space-evenly;
       button {
-        width: 160px;
+        width: 175px;
         line-height: 20px;
         font-size: 1rem;
-        padding: .5rem 0.5rem
+        padding: .75rem 0.5rem
       }
     }
   }
 }
 
 @include desktop() {
-  .associations {
+  .associations__mobile {
+    display: none;
+  }
+
+  .associations__desktop {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 190px;
+    margin-bottom: 120px;
     h2 {
       @include header() {
         margin: 70px 0 20px 0;
@@ -60,10 +60,11 @@
     img {
       margin-bottom: 50px;
     }
-    .associations__buttons {
+    .associations__desktop--buttons {
       display: flex;
       justify-content: space-between;
       width: 700px;
+      margin-bottom: 80px;
       button {
         width: 200px;
         line-height: 20px;
