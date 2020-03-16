@@ -30,7 +30,7 @@
 
 @include desktop() {
   .footer__container {
-    max-width: 1800px;
+    max-width: 1650px;
     position: relative;
     .footer__img {
       display: block;
@@ -40,6 +40,9 @@
       background-size: cover;
       height: 75vh;
       opacity: 0.2;
+    }
+    .footer__form {
+      padding-top: 180px;
     }
   }
 }

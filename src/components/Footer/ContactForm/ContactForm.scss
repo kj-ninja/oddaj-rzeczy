@@ -1,3 +1,16 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #3C3C3C26;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #3C3C3C26;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #3C3C3C26;
+}
+
 .contact-form {
   max-width: 530px;
   display: flex;
@@ -11,13 +24,11 @@
     border-bottom: 1px solid black;
     margin-top: 12px;
     padding-bottom: 5px;
-    color: #3C3C3C26;
   }
   textarea {
     border: none;
     border-bottom: 1px solid black;
     margin-top: 12px;
-    color: #3C3C3C26;
     resize: none;
   }
   .contact-form__user {
@@ -38,7 +49,6 @@
 .error-message {
   position: relative;
   top: -1px;
-  //border-top: 1px solid red;
   padding-top: 3px;
   font-size: 0.8rem;
   height: 40px;

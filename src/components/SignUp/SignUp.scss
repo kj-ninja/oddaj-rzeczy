@@ -1,7 +1,7 @@
-@import "../../scss/settings/mixins";
 @import "../../scss/settings/colors";
+@import "../../scss/settings/mixins";
 
-.login__container {
+.signup__container {
   max-width: 600px;
   margin: 200px auto;
   display: flex;
@@ -18,7 +18,7 @@
   img {
     margin-bottom: 30px;
   }
-  .login__form {
+  .signup__form {
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@
       height: 40px;
       color: red;
     }
-    .login__buttons {
+    .signup__buttons {
       display: flex;
       justify-content: space-between;
     }

@@ -16,7 +16,7 @@ const HeroSection = () => {
                     <span>ODDAJ JE POTRZEBUJĄCYM</span> - szybko i w zaufane ręce
                 </p>
                 <p className="hero__btn--mobile">
-                    <Link to="/rejestracja"><Button variant="outline-primary">Załóż konto</Button></Link>
+                    <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>
                 </p>
             </Jumbotron>
 

@@ -1,43 +1,67 @@
-import React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import React, {useState} from 'react';
+import './LogIn.scss';
+import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import Menu from "../Header/Menu/Menu";
+import Button from "react-bootstrap/Button";
+import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router';
+import {translate} from '../../functions/translate';
 
 const LogIn = () => {
+    const [errorMessage, setErrorMessage] = useState(null);
+
     return (
-        <Formik
-            initialValues={{ email: '', password: ''}}
-            validationSchema={Yup.object({
-                email: Yup.string()
-                    .email('Invalid email address')
-                    .required('Required'),
-                password: Yup.string()
-                    .required('Required'),
-            })}
-            onSubmit={(values) => {
-                firebase.auth().signInWithEmailAndPassword(values.email, values.password)
-                    .catch(function(error) {
-                    // Handle Errors here.
-                    // Wyswietl w divie wiadomosc o blednym hasle
-                        //TODO: 
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // ...
-                });
-            }}
-        >
-            <Form>
-                <label htmlFor="email">Email Address</label>
-                <Field name="email" type="email" />
-                <ErrorMessage name="email" />
-                <label htmlFor="password">Hasło</label>
-                <Field name="password" type="password" />
-                <ErrorMessage name="password" />
-                <button type="submit">Submit</button>
-            </Form>
-        </Formik>
+        <>
+            <Menu/>
+            <div className="login__container">
+                <h2>Zaloguj się</h2>
+                <img src={require('../../assets/Decoration.svg')} alt=""/>
+                <Formik
+                    initialValues={{email: '', password: ''}}
+                    validationSchema={Yup.object({
+                        email: Yup.string()
+                            .email('Invalid email address')
+                            .required('Required'),
+                        password: Yup.string()
+                            .required('Required')
+                    })}
+                    onSubmit={(values) => {
+
+                        firebase.auth().signInWithEmailAndPassword(values.email, values.password)
+                            .then(res => {
+                                console.log('zalogowano');
+                                return <Redirect exact to="/" />
+                            })
+                            .catch(function (error) {
+                                setErrorMessage(translate(error.code));
+                            });
+                    }}
+                >
+                    <Form className="login__form">
+                        <label htmlFor="email">Email</label>
+                        <Field name="email" type="email" id="email"/>
+                        <p className="error-message">
+                            <ErrorMessage name="email"/>
+                        </p>
+                        <label htmlFor="password">Hasło</label>
+                        <Field name="password" type="password" id="password"/>
+                        <p className="error-message">
+                            <ErrorMessage name="password"/>
+                            {errorMessage}
+                        </p>
+                        <div className="login__buttons">
+                            <Button type="submit" variant="outline-secondary" size="lg">Zaloguj się</Button>
+                            <Link to="/rejestracja"><Button variant="outline-secondary" size="lg">Załóż
+                                konto</Button></Link>
+                        </div>
+                    </Form>
+                </Formik>
+            </div>
+        </>
     );
 };
 

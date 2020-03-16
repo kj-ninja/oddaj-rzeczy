@@ -12,17 +12,17 @@ import "firebase/firestore";
 
 
 const Menu= () => {
-    const [loggedUser, setUser] = useState(null);
+    const [loggedUser, setLoggedUser] = useState(null);
 
 
     firebase.auth().onAuthStateChanged(function(user) {
         console.log(user.email);
         if (user) {
             console.log('zalogowano');
-            setUser(user);
+            setLoggedUser(user);
         } else {
             console.log('wylogowano');
-            setUser(null);
+            setLoggedUser(null);
         }
     });
 
@@ -39,7 +39,7 @@ const Menu= () => {
             <Navbar fixed="top" bg="light" expand="lg" className="navbar__mobile">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <div className="navbar__buttons--mobile">
-                    <Link to="/logowanie"><Button variant="outline-primary">Zaloguj</Button></Link>
+                    <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj się</Button></Link>
                 </div>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -53,7 +53,7 @@ const Menu= () => {
             </Navbar>
 
             <div className="navbar__buttons--desktop">
-                <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj</Button></Link>
+                <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj się</Button></Link>
                 <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>
             </div>
             <Nav className="justify-content-end navbar__desktop">
