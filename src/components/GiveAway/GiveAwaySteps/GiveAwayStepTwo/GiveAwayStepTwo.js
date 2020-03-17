@@ -25,7 +25,7 @@ const GiveAwayStepTwo = ({bags, setBags, setStep}) => {
             <Form>
                 <Form.Group className="step-two__form" controlId="exampleForm.SelectCustomSizeLg">
                     <Form.Label>Liczba 60l worków:</Form.Label>
-                    <Form.Control as="select" size="lg" onChange={(e)=>setBags(e.target.value)}>
+                    <Form.Control as="select" size="lg" onChange={(e)=>setBags(e.target.value)} value={bags}>
                         <option value="">wybierz</option>
                         <option>1</option>
                         <option>2</option>
