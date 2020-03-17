@@ -8,7 +8,6 @@ import Copyright from "./Copyright";
 
 const Footer = () => {
     const [isSuccess, setIsSuccess] = useState(false);
-
     const successMessage = (
         <p className="success-message">
             Wiadomość została wysłana! Wkrótce się skontaktujemy.
@@ -32,5 +31,4 @@ const Footer = () => {
         </footer>
     );
 };
-
 export default Footer;

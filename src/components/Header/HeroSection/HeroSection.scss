@@ -27,7 +27,6 @@
 .hero__container {
   display: none;
 }
-
 @include desktop() {
   .jumbotron {
     display: none;

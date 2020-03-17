@@ -41,5 +41,4 @@ const AssociationsDesktop = ({result, setAssociation, setCurrentPage}) => {
         </section>
     );
 };
-
 export default AssociationsDesktop;

@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import {Link} from "react-router-dom";
 
-const HeroSection = () => {
+const HeroSection = ({loggedUser}) => {
     return (
         <section className="hero">
             <Jumbotron className="hero__container--mobile">
@@ -27,8 +27,14 @@ const HeroSection = () => {
                         <h1>Zacznij pomagać!<br/> Oddaj niechciane rzeczy w zaufane ręce</h1>
                         <img src={require("../../../assets/Decoration.svg")} alt=""/>
                         <div className="hero__buttons">
-                            <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button></Link>
-                            <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ZORGANIZUJ ZBIÓRKĘ</Button></Link>
+                            {loggedUser ? <Link to="/oddaj-rzeczy"><Button variant="outline-secondary" size="lg">ODDAJ
+                                    RZECZY</Button></Link> :
+                                <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ODDAJ
+                                    RZECZY</Button></Link>}
+                            {loggedUser ? <Link to="/oddaj-rzeczy"><Button variant="outline-secondary" size="lg">ZORGANIZUJ
+                                    ZBIÓRKĘ</Button></Link> :
+                                <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ZORGANIZUJ
+                                    ZBIÓRKĘ</Button></Link>}
                         </div>
                     </Col>
                 </Row>
@@ -36,5 +42,4 @@ const HeroSection = () => {
         </section>
     )
 };
-
 export default HeroSection;

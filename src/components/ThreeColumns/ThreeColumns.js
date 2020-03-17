@@ -17,5 +17,4 @@ const ThreeColumns = () => {
         </div>
     );
 };
-
 export default ThreeColumns;

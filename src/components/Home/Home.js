@@ -6,9 +6,7 @@ import SimpleSteps from "../SimpleSteps/SimpleSteps";
 import About from "../About/About";
 import Associations from "../Associations/Associations";
 import Footer from "../Footer/Footer";
-
 const Element = Scroll.Element;
-
 
 const Home = () => {
     return (
@@ -22,5 +20,4 @@ const Home = () => {
         </>
     );
 };
-
 export default Home;

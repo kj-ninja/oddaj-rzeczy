@@ -57,5 +57,4 @@ const SimpleSteps = () => {
         </section>
     );
 };
-
 export default SimpleSteps;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Menu.scss';
 import {Link as ScrollLink} from "react-scroll";
 import {Link} from 'react-router-dom';
@@ -10,9 +10,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-
-const Menu= () => {
-    const [loggedUser, setLoggedUser] = useState(null);
+const Menu= ({loggedUser, setLoggedUser}) => {
     let result = null;
 
     if (loggedUser) {
@@ -22,15 +20,6 @@ const Menu= () => {
             </div>
         )
     }
-
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            console.log('zalogowano');
-            setLoggedUser(user);
-        } else {
-            setLoggedUser(null);
-        }
-    });
 
     const handleLogout = () => {
         firebase.auth().signOut().then(function() {
@@ -61,7 +50,7 @@ const Menu= () => {
 
             <div className="navbar__buttons--desktop">
                 {loggedUser ? result : null}
-                {loggedUser ? <Link to="/oddajRzeczy"><Button variant="outline-secondary">Oddaj rzeczy</Button></Link> : <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj się</Button></Link>}
+                {loggedUser ? <Link to="/oddaj-rzeczy"><Button variant="outline-secondary">Oddaj rzeczy</Button></Link> : <Link to="/logowanie"><Button variant="outline-secondary">Zaloguj się</Button></Link>}
                 {loggedUser ? <Link to="/wylogowano"><Button onClick={()=>handleLogout()} variant="outline-secondary">Wyloguj</Button></Link> : <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>}
             </div>
             <Nav className="justify-content-end navbar__desktop">
@@ -84,5 +73,4 @@ const Menu= () => {
         </Container>
     );
 };
-
 export default Menu;

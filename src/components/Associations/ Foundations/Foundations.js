@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-
 const Foundations = ({foundations}) => {
 
     return (
@@ -29,5 +28,4 @@ const Foundations = ({foundations}) => {
         </section>
     );
 };
-
 export default Foundations;

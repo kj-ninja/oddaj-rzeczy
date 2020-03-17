@@ -13,5 +13,4 @@ const OneColumn = ({quantity, events}) => {
         </Col>
     );
 };
-
 export default OneColumn;

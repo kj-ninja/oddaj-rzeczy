@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-
 const Locals = ({locals}) => {
     return (
         <section className="locals">
@@ -28,5 +27,4 @@ const Locals = ({locals}) => {
         </section>
     );
 };
-
 export default Locals;

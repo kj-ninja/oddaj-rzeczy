@@ -12,5 +12,4 @@ const Copyright = () => {
         </div>
     );
 };
-
 export default Copyright;

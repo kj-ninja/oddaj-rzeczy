@@ -23,5 +23,4 @@ const Pagination = ({postsPerPage, totalPosts, paginate}) => {
         </nav>
     );
 };
-
 export default Pagination;

@@ -8,7 +8,6 @@ import "firebase/firestore";
 import Menu from "../Header/Menu/Menu";
 import Button from "react-bootstrap/Button";
 import {Link} from 'react-router-dom';
-import {Redirect} from 'react-router';
 import {translate} from '../../functions/translate';
 
 const Login = () => {
@@ -30,13 +29,10 @@ const Login = () => {
                             .required('Required')
                     })}
                     onSubmit={(values) => {
-
                         firebase.auth().signInWithEmailAndPassword(values.email, values.password)
                             .then(res => {
                                 console.log('zalogowano');
-                                // TODO: to jest kupa jak to zmienic na Redirect z React router dom ????
                                 window.location.href = 'http://localhost:3000/#/';
-                                // return <Redirect exact to="/" />
                             })
                             .catch(function (error) {
                                 setErrorMessage(translate(error.code));
@@ -66,5 +62,4 @@ const Login = () => {
         </>
     );
 };
-
 export default Login;

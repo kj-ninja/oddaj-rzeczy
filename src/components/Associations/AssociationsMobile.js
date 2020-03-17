@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Button from "react-bootstrap/Button";
 
-
 const AssociationsMobile = () => {
     const [association, setAssociation] = useState('foundations');
     const [isFoundationsActive, setIsFoundationsActive] = useState(true);
@@ -66,5 +65,4 @@ const AssociationsMobile = () => {
         </section>
     );
 };
-
 export default AssociationsMobile;

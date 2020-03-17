@@ -10,7 +10,6 @@ import Menu from "../Header/Menu/Menu";
 import {Link} from 'react-router-dom';
 import {translate} from "../../functions/translate";
 
-
 const Schema = Yup.object().shape({
     email: Yup.string()
         .email('Email powinien być poprawny')
@@ -107,5 +106,4 @@ function SignUp() {
         </>
     );
 }
-
 export default SignUp;

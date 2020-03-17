@@ -69,5 +69,4 @@ const ContactForm = ({setIsSuccess}) => {
         </Formik>
     );
 };
-
 export default ContactForm;
