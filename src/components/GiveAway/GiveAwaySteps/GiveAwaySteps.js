@@ -9,7 +9,7 @@ import GiveAwayStepThree from "./GiveAwayStepThree/GiveAwayStepThree";
 import GiveAwayStepFour from "./GiveAwayStepFour/GiveAwayStepFour";
 
 const GiveAwaySteps = () => {
-    const [step, setStep] = useState('stepOne');
+    const [step, setStep] = useState('stepFour');
     const [type, setType] = useState('');
     const [bags, setBags] = useState('');
     const [localization, setLocalization] = useState('');

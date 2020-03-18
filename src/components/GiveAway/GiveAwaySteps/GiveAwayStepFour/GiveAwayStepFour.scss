@@ -1,0 +1,31 @@
+.give-away__step-four {
+  h2 {
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+  .give-away__step-four--form {
+    display: flex;
+    width: 870px;
+    .give-away__step-four--address {
+      display: flex;
+      flex-direction: column;
+      width: 390px;
+    }
+    .give-away__step-four--term {
+      display: flex;
+      flex-direction: column;
+      width: 390px;
+    }
+  }
+  button {
+    width: 180px;
+    position: absolute;
+    bottom: 50px;
+    padding: 1.5rem 3rem;
+    &:last-of-type {
+      left: 380px;
+    }
+  }
+}
