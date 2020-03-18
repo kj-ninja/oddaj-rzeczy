@@ -18,7 +18,7 @@ const Schema = Yup.object().shape({
         .required("Pole jest wymagane")
         .min(6, 'Hasło powinno mieć minimum 6 znaków'),
     changepassword: Yup.string().when("password", {
-        is: val => (val && val.length > 0 ? true : false),
+        is: val => (!!(val && val.length > 0)),
         then: Yup.string().oneOf(
             [Yup.ref("password")],
             "Obydwa hasła powinny być takie same"

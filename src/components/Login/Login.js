@@ -23,10 +23,10 @@ const Login = () => {
                     initialValues={{email: '', password: ''}}
                     validationSchema={Yup.object({
                         email: Yup.string()
-                            .email('Invalid email address')
-                            .required('Required'),
+                            .email('Zły adres email')
+                            .required('Pole wymagane'),
                         password: Yup.string()
-                            .required('Required')
+                            .required('Pole wymagane')
                     })}
                     onSubmit={(values) => {
                         firebase.auth().signInWithEmailAndPassword(values.email, values.password)

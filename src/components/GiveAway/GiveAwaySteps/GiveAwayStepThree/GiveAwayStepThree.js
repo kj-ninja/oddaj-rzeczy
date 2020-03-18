@@ -42,6 +42,7 @@ const GiveAwayStepThree = ({setLocalization, setStep, setHelpGroups, setLocaliza
         }
         else {
             setStep('stepFour');
+            setHelpGroups(result);
         }
     };
     const handleSelect = (e) => {
@@ -85,9 +86,9 @@ const GiveAwayStepThree = ({setLocalization, setStep, setHelpGroups, setLocaliza
     return (
         <div className="give-away__step-three">
             <Form>
-                <Form.Group className="step-two__form" controlId="exampleForm.SelectCustomSizeLg">
+                <Form.Group className="step-three__form" controlId="exampleForm.SelectCustomSizeLg">
                     <Form.Label>Lokalizacja:</Form.Label>
-                    <Form.Control as="select" size="lg" onChange={(e)=>handleSelect(e)}>
+                    <Form.Control as="select" size="lg" onChange={(e)=>handleSelect(e)} value={localization}>
                         <option value="">wybierz</option>
                         <option>Poznań</option>
                         <option>Warszawa</option>
@@ -98,40 +99,40 @@ const GiveAwayStepThree = ({setLocalization, setStep, setHelpGroups, setLocaliza
                 </Form.Group>
 
                 <h3>Komu chcesz pomóc</h3>
-                <div className="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox step-three__checkbox">
                     <input type="checkbox" className="custom-control-input" id="customCheck1" name="dzieciom" onChange={(e)=>handleCheckbox(e)}/>
                         <label className="custom-control-label" htmlFor="customCheck1">
                             dzieciom
                         </label>
                 </div>
-                <div className="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox step-three__checkbox">
                     <input type="checkbox" className="custom-control-input" id="customCheck2" name="samotnym matkom" onChange={(e)=>handleCheckbox(e)}/>
                     <label className="custom-control-label" htmlFor="customCheck2">
                         samotnym matkom
                     </label>
                 </div>
-                <div className="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox step-three__checkbox">
                     <input type="checkbox" className="custom-control-input" id="customCheck3" name="bezdomnym" onChange={(e)=>handleCheckbox(e)}/>
                     <label className="custom-control-label" htmlFor="customCheck3">
                         bezdomnym
                     </label>
                 </div>
-                <div className="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox step-three__checkbox">
                     <input type="checkbox" className="custom-control-input" id="customCheck4" name="niepełnosprawnym" onChange={(e)=>handleCheckbox(e)}/>
                     <label className="custom-control-label" htmlFor="customCheck4">
                         niepełnosprawnym
                     </label>
                 </div>
-                <div className="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox step-three__checkbox">
                     <input type="checkbox" className="custom-control-input" id="customCheck5" name="osobom starszym" onChange={(e)=>handleCheckbox(e)}/>
                     <label className="custom-control-label" htmlFor="customCheck5">
                         osobom starszym
                     </label>
                 </div>
-                {checkboxesError ? <p>Musisz wybrać minimum jedno pole</p> : null}
+                {checkboxesError ? <p style={{color: 'red', marginTop: '5px'}}>Musisz wybrać minimum jedno pole</p> : null}
                 <h3>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
                 <input type="text" className="give-away__step-three--optional" onChange={(e)=>setLocalizationSpecific(e.target.value)} />
-                {localizationError ? <p>Musisz wybrać lokalizację lub wpisac konkretną organizację</p> : null}
+                {localizationError ? <p style={{color: 'red', marginTop: '5px'}}>Musisz wybrać lokalizację lub wpisac konkretną organizację</p> : null}
             </Form>
             <Button variant="outline-secondary" size="lg" onClick={handleClickStepBack}>Wstecz</Button>
             <Button variant="outline-secondary" size="lg" onClick={handleClickStepForward} >Dalej</Button>

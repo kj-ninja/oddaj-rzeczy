@@ -31,7 +31,7 @@ const Menu= ({loggedUser, setLoggedUser}) => {
     };
 
     return (
-        <Container style={{maxWidth: '1500px'}}>
+        <Container style={{maxWidth: '1750px', paddingTop: '20px'}}>
             <Navbar fixed="top" bg="light" expand="lg" className="navbar__mobile">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <div className="navbar__buttons--mobile">

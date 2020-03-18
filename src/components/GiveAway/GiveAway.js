@@ -7,6 +7,7 @@ import GiveAwaySteps from "./GiveAwaySteps/GiveAwaySteps";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Footer from "../Footer/Footer";
 
 const GiveAway = () => {
     const [loggedUser, setLoggedUser] = useState(null);
@@ -21,9 +22,8 @@ const GiveAway = () => {
     });
 
     return (
-        <>
+        <section className="give-away">
             <Menu loggedUser={loggedUser} />
-            <section className="give-away">
                 <Container className="give-away__container">
                     <Row>
                         <Col lg={6} className="give-away__image"/>
@@ -40,10 +40,9 @@ const GiveAway = () => {
                         </Col>
                     </Row>
                 </Container>
-                <GiveAwayWarning/>
-                <GiveAwaySteps/>
-            </section>
-        </>
+            <GiveAwaySteps/>
+            <Footer/>
+        </section>
     );
 };
 export default GiveAway;

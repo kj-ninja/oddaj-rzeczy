@@ -6,11 +6,11 @@ import Button from "react-bootstrap/Button";
 const GiveAwayStepTwo = ({bags, setBags, setStep}) => {
     const [isError, setIsError] = useState(false);
 
-    const handleClickStepOne = () => {
+    const handleClickStepBack = () => {
         setStep('stepOne');
     };
 
-    const handleClickStepTwo = () => {
+    const handleClickStepForward = () => {
         if (bags.length === 0) {
             setIsError(true);
         } else {
@@ -35,9 +35,9 @@ const GiveAwayStepTwo = ({bags, setBags, setStep}) => {
                     </Form.Control>
                 </Form.Group>
             </Form>
-            {isError ? <p>Musisz wybrać jakieś pole</p> : null}
-            <Button variant="outline-secondary" size="lg" onClick={handleClickStepOne}>Wstecz</Button>
-            <Button variant="outline-secondary" size="lg" onClick={handleClickStepTwo}>Dalej</Button>
+            {isError ? <p style={{color: 'red'}}>Musisz wybrać jakieś pole</p> : null}
+            <Button variant="outline-secondary" size="lg" onClick={handleClickStepBack}>Wstecz</Button>
+            <Button variant="outline-secondary" size="lg" onClick={handleClickStepForward}>Dalej</Button>
         </div>
     );
 };

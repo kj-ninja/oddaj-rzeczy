@@ -10,6 +10,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 100px;
+    padding-right: 100px;
     margin-bottom: 50px;;
     h2 {
       text-align: center;
@@ -30,7 +31,7 @@
 
 @include desktop() {
   .footer__container {
-    max-width: 1650px;
+    max-width: 1750px;
     position: relative;
     .footer__img {
       display: block;

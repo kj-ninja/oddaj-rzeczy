@@ -1,69 +1,72 @@
 @import '../../scss/settings/mixins';
 
-.give-away {
-  .give-away__container {
-    max-width: 1900px;
-    .give-away__image {
-      position: relative;
-      top: -95px;
-      height: 65vh;
-      background-image: url("../../assets/Form-Hero-Image.jpg");
-      background-size: contain;
-      background-position: top center;
-      background-repeat: no-repeat;
+.give-away__container {
+  max-width: 1900px;
+  .row {
+    height: 853px;
+  }
+  .give-away__image {
+    position: relative;
+    top: -95px;
+    background-image: url("../../assets/Form-Hero-Image.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+  .give-away__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: -50px;
+    max-width: 640px;
+
+    h2 {
+      @include header() {
+        margin-top: 80px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
     }
-    .give-away__info {
+
+    p {
+      margin-top: 30px;
+      margin-bottom: 65px;
+      font-size: 40px;
+      line-height: 55px;
+      font-weight: 300;
+    }
+
+    .give-away__diamonds {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      left: -50px;
-      max-width: 640px;
-      h2 {
-        @include header() {
-          margin-top: 80px;
-          margin-bottom: 30px;
-          text-align: center;
-        }
-      }
-      p {
-        margin-top: 30px;
-        margin-bottom: 65px;
-        font-size: 40px;
-        line-height: 55px;
-        font-weight: 300;
-      }
-      .give-away__diamonds {
+
+      .give-away__diamond {
+        position: relative;
+        margin: 0 10px;
+        border: 0.75px solid black;
+        width: 130px;
+        height: 130px;
+        transform: rotate(45deg);
         display: flex;
-        .give-away__diamond {
-          position: relative;
-          margin: 0 10px;
-          border: 0.75px solid black;
-          width: 130px;
-          height: 130px;
-          transform: rotate(45deg);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          .diamond__number {
-            position: absolute;
-            top: 10px;
-            left: 14px;
-            transform: rotate(-45deg);
-            font-size: 1.75rem;
-          }
-          span {
-            transform: rotate(-45deg);
-            font-size: 20px;
-            line-height: 27px;
-            font-weight: 300;
-            text-align: center;
-            padding: 0.25rem;
-          }
+        justify-content: center;
+        align-items: center;
+
+        .diamond__number {
+          position: absolute;
+          top: 10px;
+          left: 14px;
+          transform: rotate(-45deg);
+          font-size: 1.75rem;
+        }
+
+        span {
+          transform: rotate(-45deg);
+          font-size: 20px;
+          line-height: 27px;
+          font-weight: 300;
+          text-align: center;
+          padding: 0.25rem;
         }
       }
     }
-
-
   }
 }

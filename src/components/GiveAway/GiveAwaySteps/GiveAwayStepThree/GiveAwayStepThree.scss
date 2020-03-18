@@ -1,5 +1,5 @@
 .give-away__step-three {
-  .step-two__form {
+  .step-three__form {
     label {
       font-size: 36px;
       line-height: 45px;
@@ -13,11 +13,27 @@
     font-weight: 600;
     margin: 58px 0 20px 0;
   }
+  .step-three__checkbox {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 300;
+    min-height: 2.5rem;
+    padding-left: 2.5rem;
+    label {
+      &::before, &::after {
+        top: 0.45rem;
+        left: -2.5rem;
+        width: 1.35rem;
+        height: 1.35rem;
+      }
+    }
+  }
   select {
     width: 300px;
   }
   .give-away__step-three--optional {
     width: 550px;
+    height: 35px;
   }
   button {
     width: 180px;

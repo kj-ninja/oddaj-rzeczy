@@ -8,15 +8,35 @@
   .give-away__step-four--form {
     display: flex;
     width: 870px;
-    .give-away__step-four--address {
-      display: flex;
-      flex-direction: column;
-      width: 390px;
+    h3 {
+      font-size: 24px;
+      line-height: 45px;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
-    .give-away__step-four--term {
-      display: flex;
-      flex-direction: column;
-      width: 390px;
+    .give-away__step-four--address, .give-away__step-four--term  {
+      width: 500px;
+      font-size: 24px;
+      line-height: 32px;
+      .row {
+        margin-bottom: 20px;
+      }
+      input {
+        width: 230px;
+        font-size: 16px;
+      }
+      .step-four__error {
+        font-size: 16px;
+        color: red;
+      }
+      .step-four__error--time {
+        font-size: 16px;
+        color: red;
+      }
+      textarea {
+        font-size: 16px;
+        width: 230px;
+      }
     }
   }
   button {
