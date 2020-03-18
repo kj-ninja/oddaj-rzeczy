@@ -5,7 +5,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import GiveAwayStepOne from "./GiveAwayStepOne/GiveAwayStepOne";
 import GiveAwayStepTwo from "./GiveAwayStepTwo/GiveAwayStepTwo";
-import GiveAwayStepThree from "../GiveAwayStepThree/GiveAwayStepThree";
+import GiveAwayStepThree from "./GiveAwayStepThree/GiveAwayStepThree";
+import GiveAwayStepFour from "./GiveAwayStepFour/GiveAwayStepFour";
 
 const GiveAwaySteps = () => {
     const [step, setStep] = useState('stepOne');
@@ -16,17 +17,19 @@ const GiveAwaySteps = () => {
     const [localizationSpecific, setLocalizationSpecific] = useState('');
     let result;
 
-    console.log(helpGroup);
-
     if (step === 'stepOne') {
-        result = <GiveAwayStepOne type={type} setType={setType} setStep={setStep}/>;
+        result = <GiveAwayStepOne type={type} setType={setType} setStep={setStep}/>
     } else if (step === 'stepTwo') {
-        result = <GiveAwayStepTwo bags={bags} setBags={setBags} setStep={setStep}/>;
+        result = <GiveAwayStepTwo bags={bags} setBags={setBags} setStep={setStep}/>
     } else if (step === 'stepThree') {
         result = <GiveAwayStepThree setLocalization={setLocalization}
                                     setStep={setStep}
                                     setHelpGroups={setHelpGroups}
-                                    setLocalizationSpecific={setLocalizationSpecific} />;
+                                    setLocalizationSpecific={setLocalizationSpecific}
+                                    localization={localization}
+                                    localizationSpecific={localizationSpecific} />
+    } else if (step === 'stepFour') {
+        result = <GiveAwayStepFour/>
     }
 
     return (
