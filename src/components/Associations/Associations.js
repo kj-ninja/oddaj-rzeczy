@@ -52,7 +52,17 @@ const Associations = () => {
     }
 
     // Change page
-    const handlePaginate = (pageNumber) => setCurrentPage(pageNumber);
+    const handlePaginate = (pageNumber, e) => {
+        setCurrentPage(pageNumber);
+
+        // if (currentPage === 1) {
+        //     e.target.id = 'btn btn-outline-secondary active';
+        // }
+        // e.target.className = 'btn btn-outline-secondary active';
+
+
+
+    };
 
     let result;
     if (association === 'foundations') {

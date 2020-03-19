@@ -10,10 +10,11 @@ const HeroSection = ({loggedUser}) => {
     return (
         <section className="hero">
             <div className="hero__container--mobile">
-                <h1>Masz w domu rzeczy, z którymi nie wiesz co zrobić?</h1>
-                <p className="hero__para--mobile">
-                    <span>ODDAJ JE POTRZEBUJĄCYM</span> - szybko i w zaufane ręce
-                </p>
+                <div className="hero__para--mobile">
+                    <h1>ODDAJ POTRZEBUJĄCYM</h1>
+                    <span>- szybko i w zaufane ręce</span>
+                </div>
+                <span>Masz w domu rzeczy, z którymi nie wiesz co zrobić?</span>
                 <p className="hero__btn--mobile">
                     <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>
                 </p>

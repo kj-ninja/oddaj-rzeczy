@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.scss';
 import * as Scroll from 'react-scroll';
 import Header from "../Header/Header";
 import ThreeColumns from "../ThreeColumns/ThreeColumns";
@@ -16,7 +17,7 @@ const Home = () => {
             <Element name="steps"><SimpleSteps/></Element>
             <Element name="about"><About/></Element>
             <Element name="associations"><Associations/></Element>
-            <Element name="contact"><Footer/></Element>
+            <Element name="contact" className="last-section"><Footer/></Element>
         </>
     );
 };

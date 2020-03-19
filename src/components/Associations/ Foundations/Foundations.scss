@@ -2,15 +2,19 @@
 @import "../../../scss/settings/mixins";
 
 .foundations {
-  width: 1350px;
+  padding: 0 20px;
+  @include xl() {
+    width: 1300px;
+    padding: 0;
+  }
   .foundations__info {
     margin: 0 auto 66px auto;
-    max-width: 600px;
-    font-size: 1.375rem;
+    max-width: 640px;
+    font-size: 22px;
     line-height: 30px;
     text-align: center;
   }
-  .foundations__container {;
+  .foundations__container {
     .foundations__row {
       border-bottom: 1px solid black;
       margin-bottom: 30px;

@@ -41,9 +41,9 @@ const Menu= ({loggedUser, setLoggedUser}) => {
                     <Nav className="mr-auto">
                         <ScrollLink className="nav-link" to="start" spy={true} smooth={true} offset={-45} duration={500}>Start</ScrollLink>
                         <ScrollLink className="nav-link" to="steps" spy={true} smooth={true} offset={-100} duration={500}>O co chodzi?</ScrollLink>
-                        <ScrollLink className="nav-link" to="about" spy={true} smooth={true} offset={-55} duration={500}>O nas</ScrollLink>
-                        <ScrollLink className="nav-link" to="associations" spy={true} smooth={true} offset={-55} duration={500}>Fundacja i organizacje</ScrollLink>
-                        <ScrollLink className="nav-link" to="contact" spy={true} smooth={true} duration={500}>Kontakt</ScrollLink>
+                        <ScrollLink className="nav-link" to="about" spy={true} smooth={true} offset={-35} duration={500}>O nas</ScrollLink>
+                        <ScrollLink className="nav-link" to="associations" spy={true} smooth={true} offset={-70} duration={500}>Fundacja i organizacje</ScrollLink>
+                        <ScrollLink className="nav-link" to="contact" spy={true} smooth={true} offset={20} duration={500}>Kontakt</ScrollLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

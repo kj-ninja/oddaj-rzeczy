@@ -16,7 +16,7 @@ const Footer = () => {
 
     return (
         <footer>
-            <Container className="footer__container">
+            <Container>
                 <Row>
                     <Col lg={7} className="footer__img"/>
                     <Col xs={12} lg={5} className="footer__form">

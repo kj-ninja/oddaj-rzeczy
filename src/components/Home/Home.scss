@@ -1,0 +1,7 @@
+@import "../../scss/settings/mixins";
+
+@include desktop() {
+  div.last-section {
+    height: 900px;
+  }
+}

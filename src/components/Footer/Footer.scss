@@ -1,49 +1,49 @@
 @import '../../scss/settings/mixins';
 
-.footer__container {
-  .footer__img {
-    display: none;
+.footer__img {
+  display: none;
+}
+.footer__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 100px;
+  margin-bottom: 50px;;
+  h2 {
+    text-align: center;
+    @include header() {
+      margin-bottom: 15px;
+    }
   }
-  .footer__form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 100px;
-    padding-right: 100px;
-    margin-bottom: 50px;;
-    h2 {
-      text-align: center;
-      @include header() {
-        margin-bottom: 15px;
-      }
-    }
-    .success-message {
-      width: 260px;
-      text-align: center;
-      color: green;
-      font-weight: 600;
-      line-height: 20px;
-      margin: 20px 0 20px 0;
-    }
+  .success-message {
+    width: 260px;
+    text-align: center;
+    color: green;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 20px 0 20px 0;
   }
 }
 
 @include desktop() {
-  .footer__container {
-    max-width: 1750px;
+  footer {
     position: relative;
-    .footer__img {
-      display: block;
-      background: url("../../assets/Background-Contact-Form.jpg");
-      background-position: left;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 75vh;
-      opacity: 0.2;
-    }
-    .footer__form {
-      padding-top: 180px;
+    top: -100px;
+    .container {
+      max-width: 1850px;
+      .footer__img {
+        display: block;
+        background: url("../../assets/Background-Contact-Form.jpg");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 75vh;
+        opacity: 0.2;
+      }
+      .footer__form {
+        padding-top: 180px;
+      }
     }
   }
 }
