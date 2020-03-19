@@ -8,9 +8,9 @@ const AssociationsMobile = () => {
     const [isLocalsActive, setIsLocalsActive] = useState(false);
     let result;
     const styles = {
-        maxWidth: '360px',
+        padding: '0 40px 0 40px',
         margin: '0 auto',
-        fontSize: '1.5rem'
+        fontSize: '1.25rem'
     };
 
     const handleFoundations = () => {

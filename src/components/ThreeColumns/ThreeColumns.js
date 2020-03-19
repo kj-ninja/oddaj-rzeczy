@@ -11,7 +11,7 @@ const ThreeColumns = () => {
                 <Row>
                     <OneColumn quantity={10} events="ODDANYCH WORKÓW" />
                     <OneColumn quantity={5} events="WSPARTYCH ORGANIZACJI" />
-                    <OneColumn quantity={7} events="ZORGANIZOWANY ZBIÓREK" />
+                    <OneColumn quantity={7} events="ZORGANIZOWANYCH ZBIÓREK" />
                 </Row>
             </Container>
         </div>

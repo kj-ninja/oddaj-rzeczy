@@ -4,6 +4,10 @@
 
 .about__container {
   max-width: 1750px;
+  position: relative;
+  @include desktop() {
+    top: -100px;
+  }
   .about__info {
     background-color: $background;
     padding: 50px 20px;

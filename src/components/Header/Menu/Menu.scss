@@ -1,14 +1,8 @@
 @import "../../../scss/settings/mixins";
 @import "../../../scss/settings/colors";
 
-a {
-  cursor: pointer;
-}
-
-.navbar__buttons--mobile {
-  button {
-    margin-right: 16px;
-  }
+.navbar__container {
+  max-width: 1750px;
 }
 
 .navbar__buttons--desktop {
@@ -42,6 +36,8 @@ a {
     position: relative;
     z-index: 1000;
     display: flex;
+    font-size: 18px;
+    line-height: 24px;
     a {
       color: $font-color;
     }

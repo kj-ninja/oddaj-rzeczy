@@ -1,15 +1,20 @@
 @import "../../../scss/settings/mixins";
+@import "../../../scss/settings/colors";
 
 .hero__container--mobile {
+  padding: 2rem 1rem;
   text-align: center;
-  .hero_title--mobile {
-    font-size: 1.15rem;
+  background-color: $background;
+  h1 {
+    font-size: 1rem;
     margin-bottom: 30px;
   }
   .hero__para--mobile {
     font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-align: left;
+    padding: 0 0.75rem;
     span {
       font-size: 1.5rem;
     }
@@ -24,17 +29,17 @@
   }
 }
 
-.hero__container {
+.hero__container--desktop {
   display: none;
 }
 @include desktop() {
-  .jumbotron {
+  .hero__container--mobile {
     display: none;
   }
-  .hero__container {
-    max-width: 1850px;
+  .hero__container--desktop {
+    max-width: 1900px;
     position: relative;
-    top: -50px;
+    top: -100px;
     display: block;
     .hero__image {
       background-image: url("../../../assets/Home-Hero-Image.jpg");
@@ -51,20 +56,18 @@
       justify-content: center;
       h1 {
         @include header() {
-          margin-bottom: 20px;
         }
       }
       img {
         margin-bottom: 65px;
       }
       .hero__buttons {
-        width: 500px;
+        width: 650px;
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
         button {
-          width: 230px;
-          padding: 1.25rem 3.5rem;
+          @include mainBtn()
         }
       }
     }

@@ -52,6 +52,8 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 120px;
+    position: relative;
+    top: -100px;
     h2 {
       @include header() {
         margin: 70px 0 20px 0;

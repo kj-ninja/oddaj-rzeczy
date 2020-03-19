@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 
 const OneColumn = ({quantity, events}) => {
     return (
-        <Col md={12} lg={4}>
+        <Col xs={12} md={4}>
             <div className="three-columns__column">
                 <h3>{quantity}</h3>
                 <div>{events}</div>

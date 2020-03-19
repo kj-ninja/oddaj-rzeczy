@@ -4,9 +4,13 @@
 @import "./settings/mixins";
 
 body {
+  font-size: 18px;
   padding-top: 56px;
   font-family: $font-base;
   @include desktop() {
     padding-top: 0;
+  }
+  a {
+    cursor: pointer;
   }
 }

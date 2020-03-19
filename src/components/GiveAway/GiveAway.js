@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './GiveAway.scss';
 import Menu from "../Header/Menu/Menu";
 import * as firebase from "firebase";
-import GiveAwayWarning from "./GiveAwayWarning/GiveAwayWarning";
 import GiveAwaySteps from "./GiveAwaySteps/GiveAwaySteps";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
