@@ -129,10 +129,10 @@ const GiveAwayStepThree = ({setLocalization, setStep, setHelpGroups, setLocaliza
                         osobom starszym
                     </label>
                 </div>
-                {checkboxesError ? <p style={{color: 'red', marginTop: '5px'}}>Musisz wybrać minimum jedno pole</p> : null}
+                {checkboxesError ? <p>Musisz wybrać minimum jedno pole</p> : null}
                 <h3>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
                 <input type="text" className="give-away__step-three--optional" onChange={(e)=>setLocalizationSpecific(e.target.value)} />
-                {localizationError ? <p style={{color: 'red', marginTop: '5px'}}>Musisz wybrać lokalizację lub wpisac konkretną organizację</p> : null}
+                {localizationError ? <p>Musisz wybrać lokalizację lub wpisac konkretną organizację</p> : null}
             </Form>
             <Button variant="outline-secondary" size="lg" onClick={handleClickStepBack}>Wstecz</Button>
             <Button variant="outline-secondary" size="lg" onClick={handleClickStepForward} >Dalej</Button>

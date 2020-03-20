@@ -2,7 +2,7 @@
 @import "../../../scss/settings/colors";
 
 .navbar__container {
-  max-width: 1750px;
+  max-width: 1900px;
 }
 
 .navbar__buttons--desktop {
@@ -19,6 +19,8 @@
   }
 
   .navbar__buttons--desktop {
+    position: relative;
+    z-index: 1020;
     display: flex;
     justify-content: flex-end;
     margin-bottom: 25px;

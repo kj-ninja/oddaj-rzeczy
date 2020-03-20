@@ -1,18 +1,28 @@
+@import "../../../scss/settings/mixins";
+
 .give-away__steps {
   position: relative;
-  top: -100px;
   max-width: 1900px;
   margin: 0 auto;
   background-image: url("../../../assets/Background-Form.jpg");
-  height: 883px;
+  @include desktop() {
+    height: 853px;
+  }
+  @include xl() {
+    top: -120px;
+  }
   .give-away__steps--container {
     max-width: 1600px;
     padding-top: 30px;
     h4 {
-      font-size: 24px;
-      line-height: 27px;
-      font-weight: 300;
-      margin-bottom: 70px;
+      display: none;
+      @include desktop() {
+        display: block;
+        font-size: 24px;
+        line-height: 27px;
+        font-weight: 300;
+        margin-bottom: 70px;
+      }
     }
   }
 }

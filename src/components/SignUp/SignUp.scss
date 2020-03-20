@@ -2,51 +2,25 @@
 @import "../../scss/settings/mixins";
 
 .signup__container {
-  max-width: 600px;
-  margin: 200px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: $background;
-  padding: 25px 0;
+  @include signContainer();
+  @include tablet() {
+    margin: 200px auto;
+  }
   h2 {
     @include header() {
-      text-align: center;
-      margin-bottom: 20px;
     }
   }
   img {
     margin-bottom: 30px;
   }
   .signup__form {
-    width: 360px;
-    display: flex;
-    flex-direction: column;
-    label {
-      font-weight: 600;
-    }
-    input {
-      border: none;
-      border-bottom: 1px solid black;
-      margin-top: 12px;
-      padding-bottom: 5px;
-      background-color: $background;
-    }
-    button {
-      width: 150px;
-      align-self: center;
-    }
-    .error-message {
-      position: relative;
-      top: -1px;
-      padding-top: 3px;
-      font-size: 0.8rem;
-      height: 40px;
-      color: red;
-    }
+    @include signForm();
     .signup__buttons {
       display: flex;
       justify-content: space-between;
+      button {
+        width: 150px;
+      }
     }
   }
 }

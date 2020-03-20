@@ -19,7 +19,7 @@ const GiveAwaySummary = ({type, bags, helpGroup, localization, userData, date, s
             <h3>Oddajesz:</h3>
             <div className="give-away__summary--gives">
                 <img src={require('../../../../assets/Icon-1.svg')} width="50px" alt=""/>
-                {bags} {type}, {helpGroup.join(', ')}
+                {bags} worki {type}, {helpGroup.join(', ')}
             </div>
             <div className="give-away__summary--gives">
                 <img src={require('../../../../assets/Icon-4.svg')} width="50px" alt=""/>
@@ -28,7 +28,7 @@ const GiveAwaySummary = ({type, bags, helpGroup, localization, userData, date, s
             <div className="give-away__summary--container">
                 <div className="give-away__summary--address">
                     <h3>Adres odbioru:</h3>
-                    <Container className="pl-0">
+                    <Container className="pl-0 ml-0 mr-0">
                         <Row>
                             <Col>Ulica</Col>
                             <Col>{userData.street}</Col>
@@ -49,7 +49,7 @@ const GiveAwaySummary = ({type, bags, helpGroup, localization, userData, date, s
                 </div>
                 <div className="give-away__summary--term">
                     <h3>Termin odbioru:</h3>
-                    <Container className="pl-0">
+                    <Container className="pl-0 ml-0 mr-0">
                         <Row>
                             <Col>Data</Col>
                             <Col>{date}</Col>
@@ -66,7 +66,7 @@ const GiveAwaySummary = ({type, bags, helpGroup, localization, userData, date, s
                 </div>
             </div>
             <Button variant="outline-secondary" size="lg" onClick={handleClickStepBack}>Wstecz</Button>
-            <Button variant="outline-secondary" size="lg" onClick={handleClickStepForward} >Potwierdzam</Button>
+            <Button variant="outline-secondary" size="lg" onClick={handleClickStepForward} >Zatwierdź</Button>
         </div>
     );
 };

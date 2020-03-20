@@ -16,7 +16,7 @@ const HeroSection = ({loggedUser}) => {
                 </div>
                 <span>Masz w domu rzeczy, z którymi nie wiesz co zrobić?</span>
                 <p className="hero__btn--mobile">
-                    <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>
+                    {loggedUser ? <Link to="/oddaj-rzeczy"><Button variant="outline-secondary">Oddaj rzeczy</Button></Link> : <Link to="/rejestracja"><Button variant="outline-secondary">Załóż konto</Button></Link>}
                 </p>
             </div>
 

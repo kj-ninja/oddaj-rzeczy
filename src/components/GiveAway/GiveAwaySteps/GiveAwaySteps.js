@@ -23,14 +23,14 @@ const GiveAwaySteps = () => {
     const [userData, setUserData] = useState({});
     let result;
     let stepNumber;
-    let warningResult = <GiveAwayWarning step={step} />
+    let warningResult = <GiveAwayWarning step={step}/>;
 
     if (step === 'stepOne') {
         result = <GiveAwayStepOne type={type} setType={setType} setStep={setStep}/>;
-        stepNumber = <h4>Krok 1/4</h4>
+        stepNumber = <h4>Krok 1/4</h4>;
     } else if (step === 'stepTwo') {
         result = <GiveAwayStepTwo bags={bags} setBags={setBags} setStep={setStep}/>;
-        stepNumber = <h4>Krok 2/4</h4>
+        stepNumber = <h4>Krok 2/4</h4>;
     } else if (step === 'stepThree') {
         result = <GiveAwayStepThree setLocalization={setLocalization}
                                     setStep={setStep}
@@ -38,10 +38,10 @@ const GiveAwaySteps = () => {
                                     setLocalizationSpecific={setLocalizationSpecific}
                                     localization={localization}
                                     localizationSpecific={localizationSpecific} />;
-        stepNumber = <h4>Krok 3/4</h4>
+        stepNumber = <h4>Krok 3/4</h4>;
     } else if (step === 'stepFour') {
         result = <GiveAwayStepFour setUserData={setUserData} setDate={setDate} setStep={setStep} userData={userData}/>;
-        stepNumber = <h4>Krok 4/4</h4>
+        stepNumber = <h4>Krok 4/4</h4>;
     } else if (step === 'summary') {
         result = <GiveAwaySummary type={type}
                                   bags={bags}
@@ -68,8 +68,6 @@ const GiveAwaySteps = () => {
                     <Row>
                         <Col>
                             {stepNumber}
-                        </Col>
-                        <Col>
                         </Col>
                     </Row>
                     {result}

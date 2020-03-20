@@ -35,7 +35,7 @@ const GiveAwayStepTwo = ({bags, setBags, setStep}) => {
                     </Form.Control>
                 </Form.Group>
             </Form>
-            {isError ? <p style={{color: 'red'}}>Musisz wybrać jakieś pole</p> : null}
+            {isError ? <p>Musisz wybrać jakieś pole</p> : null}
             <Button variant="outline-secondary" size="lg" onClick={handleClickStepBack}>Wstecz</Button>
             <Button variant="outline-secondary" size="lg" onClick={handleClickStepForward}>Dalej</Button>
         </div>

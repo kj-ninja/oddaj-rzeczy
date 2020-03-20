@@ -16,12 +16,25 @@
   }
 }
 
+@mixin xxl() {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
 @mixin header() {
   font-size: 38px;
   line-height: 55px;
   letter-spacing: -0.76px;
   margin-bottom: 20px;
   text-align: center;
+  @content;
+}
+
+@mixin mobileBtn() {
+  width: 130px;
+  padding: 1rem 1rem;
+  margin-bottom: 20px;
   @content;
 }
 
@@ -34,3 +47,84 @@
   padding: 15px 35px;
   @content;
 }
+
+@mixin desktopGiveAwayBtn() {
+    width: 180px;
+    padding: 1.5rem 3rem;
+    @content;
+  }
+
+@mixin signContainer() {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background;
+  padding: 25px 0;
+}
+
+@mixin signForm() {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  label {
+    font-weight: 600;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid black;
+    margin-top: 5px;
+    background-color: $background;
+  }
+  .error-message {
+    position: relative;
+    top: -1px;
+    padding-top: 3px;
+    font-size: 0.8rem;
+    height: 40px;
+    color: red;
+  }
+  @content;
+}
+
+@mixin mobileLabelFont() {
+  font-size: 18px;
+  font-weight: 300;
+  @content;
+}
+
+@mixin desktopLabelFont() {
+  font-size: 24px;
+  font-weight: 300;
+  @content;
+}
+
+@mixin mobileGiveAwayHeader() {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  @content;
+}
+
+@mixin desktopGiveAwayHeader() {
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 600;
+  @content;
+}
+
+@mixin errorMessage() {
+  color: red;
+  font-size: 14px;
+  @content;
+}
+
+@mixin desktopBtn() {
+  width: 180px;
+  position: absolute;
+  bottom: 50px;
+  padding: 1.5rem 3rem;
+  margin-bottom: 0;
+  @content;
+}
+

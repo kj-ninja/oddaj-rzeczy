@@ -26,7 +26,7 @@ const GiveAwayWarning = ({step}) => {
     return (
         <div className="give-away__warning">
             <Container className="give-away__warning--container">
-                <h3>Ważne!</h3>
+                <h2>Ważne!</h2>
                 {warningMessage}
             </Container>
         </div>

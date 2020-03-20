@@ -1,19 +1,28 @@
 @import '../../scss/settings/mixins';
+@import "../../scss/settings/variables";
 
 .footer__img {
   display: none;
+  @include xl() {
+    display: block;
+    background: url("../../assets/Background-Contact-Form.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75vh;
+    opacity: 0.2;
+  }
 }
 .footer__form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 100px;
-  margin-bottom: 50px;;
+  padding-top: 30px;
+  margin: 0 auto;
   h2 {
-    text-align: center;
     @include header() {
-      margin-bottom: 15px;
+      margin-top: 100px;
     }
   }
   .success-message {
@@ -29,20 +38,10 @@
 @include desktop() {
   footer {
     position: relative;
-    top: -100px;
     .container {
-      max-width: 1850px;
-      .footer__img {
-        display: block;
-        background: url("../../assets/Background-Contact-Form.jpg");
-        background-position: left;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 75vh;
-        opacity: 0.2;
-      }
+      max-width: 1900px;
       .footer__form {
-        padding-top: 180px;
+        padding-top: 30px;
       }
     }
   }

@@ -1,32 +1,55 @@
+@import "../../../../scss/settings/mixins";
+
 .give-away__step-two {
   h2 {
-    font-size: 36px;
-    line-height: 45px;
-    font-weight: 600;
-    margin-bottom: 40px;
+    @include mobileGiveAwayHeader();
+    margin-bottom: 45px;
+    @include desktop() {
+      @include desktopGiveAwayHeader();
+    }
   }
   .step-two__form {
-    width: 550px;
     display: flex;
+    max-width: 550px;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 50px;
+    select {
+      font-size: 1rem;
+      @include desktop() {
+        font-size: 1.25rem;
+      }
+    }
     label {
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: 300;
-      width: 220px;
+      @include mobileLabelFont() {
+        line-height: 32px;
+        width: 220px;
+      }
+      @include desktop() {
+        @include desktopLabelFont();
+      }
     }
     select {
       width: 300px;
     }
   }
-  button {
-    width: 180px;
-    position: absolute;
-    bottom: 50px;
-    padding: 1.5rem 3rem;
-    &:last-of-type {
-      left: 380px;
+  p {
+    @include errorMessage();
+    margin-bottom: 10px;
+    @include desktop() {
+      font-size: 18px;
     }
   }
+    button {
+      @include mobileBtn();
+      margin-right: 50px;
+      &:last-of-type {
+        margin-right: 0;
+        @include desktop() {
+          left: 380px;
+        }
+      }
+      @include desktop() {
+        @include desktopBtn();
+      }
+    }
 }

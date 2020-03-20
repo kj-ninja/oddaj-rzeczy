@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './GiveAwayStepFour.scss';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -16,7 +16,7 @@ const GiveAwayStepFour = ({setUserData, setDate, setStep}) => {
 
     return (
         <div className="give-away__step-four">
-            <h2>Podaj adres oraz termin odbioru rzecz przez kuriera</h2>
+            <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
             <Formik
                 initialValues={{ street: '', city: '', postcode: '', phone: '', time: '', notes: '' }}
                 validationSchema={Yup.object({
@@ -44,7 +44,7 @@ const GiveAwayStepFour = ({setUserData, setDate, setStep}) => {
                 <Form className="give-away__step-four--form">
                     <div className="give-away__step-four--address">
                         <h3>Adres odbioru:</h3>
-                            <Container>
+                        <Container className="mr-0 ml-0">
                                 <Row>
                                     <Col xs={4} className="d-flex align-items-center pl-0">
                                         <label htmlFor="street">Ulica</label>
@@ -86,19 +86,19 @@ const GiveAwayStepFour = ({setUserData, setDate, setStep}) => {
                                         <Field name="phone" type="text" />
                                     </Col>
                                     <p className="step-four__error">
-                                    <   ErrorMessage name="phone" />
+                                        <ErrorMessage name="phone" />
                                     </p>
                                 </Row>
                             </Container>
                     </div>
                     <div className="give-away__step-four--term">
                         <h3>Termin odbioru:</h3>
-                        <Container>
+                        <Container className="mr-0 ml-0">
                             <Row>
-                                <Col className="pl-0">
+                                <Col xs={4} className="pl-0">
                                     <label htmlFor="date">Data</label>
                                 </Col>
-                                <Col>
+                                <Col xs={8} className="pl-0">
                                     <input type="date" className="form-control form-control-sm" id="date"
                                             onChange={(e)=>setDate(e.target.value)} defaultValue={today}/>
                                 </Col>
@@ -107,10 +107,10 @@ const GiveAwayStepFour = ({setUserData, setDate, setStep}) => {
                                 </p>
                             </Row>
                             <Row>
-                                <Col className="pl-0">
+                                <Col xs={4} className="pl-0">
                                     <label htmlFor="time">Godzina</label>
                                 </Col>
-                                <Col>
+                                <Col xs={8} className="pl-0">
                                     <Field name="time" type="text" />
                                 </Col>
                                 <p className="step-four__error--time">
@@ -118,10 +118,10 @@ const GiveAwayStepFour = ({setUserData, setDate, setStep}) => {
                                 </p>
                             </Row>
                             <Row>
-                                <Col className="pl-0">
+                                <Col xs={4} className="pl-0">
                                     <label htmlFor="notes">Uwagi<br/> dla kuriera</label>
                                 </Col>
-                                <Col>
+                                <Col xs={8} className="pl-0">
                                     <Field name="notes" type="text" as="textarea" style={{height: '100px'}} />
                                 </Col>
                                 <p className="step-four__error">
@@ -130,8 +130,10 @@ const GiveAwayStepFour = ({setUserData, setDate, setStep}) => {
                             </Row>
                         </Container>
                     </div>
-                    <Button variant="outline-secondary" size="lg" onClick={handleClickStepBack}>Wstecz</Button>
-                    <Button variant="outline-secondary" size="lg" type="submit">Dalej</Button>
+                    <div className="give-away__step-four--buttons">
+                        <Button variant="outline-secondary" size="lg" onClick={handleClickStepBack}>Wstecz</Button>
+                        <Button variant="outline-secondary" size="lg" type="submit">Dalej</Button>
+                    </div>
                 </Form>
             </Formik>
         </div>

@@ -1,23 +1,45 @@
 @import "../../../scss/settings/colors";
+@import "../../../scss/settings/mixins";
 
 .give-away__warning {
-  position: relative;
-  top: -100px;
   width: 100%;
-  height: 180px;
   background-color: $columnsColor;
+  padding: 20px 15px;
+  @include desktop() {
+    padding: 30px 70px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+  }
+  @include xl() {
+    position: relative;
+    top: -120px;
+  }
+
   .give-away__warning--container {
-    padding: 50px 15px;
     max-width: 1600px;
   }
-  h3 {
-    font-size: 36px;
+
+  h2 {
+    font-size: 24px;
     line-height: 32px;
     font-weight: 600;
     margin-bottom: 5px;
+    text-align: center;
+    @include desktop() {
+      font-size: 36px;
+      line-height: 32px;
+      text-align: left;
+    }
   }
+
   p {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
+    text-align: center;
+    @include desktop() {
+      font-size: 22px;
+      text-align: left;
+    }
   }
 }

@@ -1,24 +1,48 @@
+@import "../../../../scss/settings/mixins";
+
 .give-away__step-three {
+  form {
+    margin-bottom: 20px;
+  }
   .step-three__form {
+    select {
+      font-size: 1rem;
+      @include desktop() {
+        font-size: 1.25rem;
+        margin-bottom: 40px;
+      }
+    }
     label {
-      font-size: 36px;
-      line-height: 45px;
-      font-weight: 600;
-      margin-bottom: 20px;
+      @include mobileGiveAwayHeader() {
+        margin-bottom: 20px;
+        @include desktop() {
+          @include desktopGiveAwayHeader();
+        }
+        }
     }
   }
   h3 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-    margin: 58px 0 20px 0;
+    @include mobileLabelFont() {
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    @include desktop() {
+      @include desktopLabelFont() {
+        font-weight: 600;
+      }
+    }
   }
   .step-three__checkbox {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 32px;
     font-weight: 300;
     min-height: 2.5rem;
     padding-left: 2.5rem;
+    @include desktop() {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
     label {
       &::before, &::after {
         top: 0.45rem;
@@ -29,19 +53,31 @@
     }
   }
   select {
-    width: 300px;
+    max-width: 300px;
+  }
+  p {
+    @include errorMessage() {
+      margin-top: 5px;
+    }
+      @include desktop() {
+        font-size: 18px;
+      }
   }
   .give-away__step-three--optional {
-    width: 550px;
+    width: 300px;
     height: 35px;
   }
   button {
-    width: 180px;
-    position: absolute;
-    bottom: 50px;
-    padding: 1.5rem 3rem;
+    @include mobileBtn();
+    margin-right: 50px;
     &:last-of-type {
-      left: 380px;
+      margin-right: 0;
+      @include desktop() {
+        left: 380px;
+      }
+    }
+    @include desktop() {
+      @include desktopBtn();
     }
   }
 }

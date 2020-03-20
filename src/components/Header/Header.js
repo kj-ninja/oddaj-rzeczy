@@ -1,19 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Menu from "./Menu/Menu";
 import HeroSection from "./HeroSection/HeroSection";
-import * as firebase from "firebase";
 
-const Header = () => {
-    const [loggedUser, setLoggedUser] = useState(null);
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            console.log('zalogowano');
-            setLoggedUser(user);
-        } else {
-            setLoggedUser(null);
-        }
-    });
+const Header = ({loggedUser, setLoggedUser}) => {
 
     return (
         <header>

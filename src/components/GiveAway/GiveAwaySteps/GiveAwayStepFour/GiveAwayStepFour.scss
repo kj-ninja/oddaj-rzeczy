@@ -1,51 +1,95 @@
+@import "../../../../scss/settings/mixins";
+
 .give-away__step-four {
   h2 {
-    font-size: 36px;
-    line-height: 45px;
-    font-weight: 600;
-    margin-bottom: 40px;
+    @include mobileGiveAwayHeader() {
+      margin-bottom: 20px;
+    }
+    @include desktop() {
+      @include desktopGiveAwayHeader() {
+        margin-bottom: 40px;
+      }
+    }
   }
   .give-away__step-four--form {
     display: flex;
-    width: 870px;
+    flex-direction: column;
+    @include desktop() {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 970px;
+    }
     h3 {
-      font-size: 24px;
-      line-height: 45px;
-      font-weight: 600;
-      margin-bottom: 20px;
+      @include mobileLabelFont() {
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        @include desktop() {
+          @include desktopLabelFont() {
+            font-weight: 600;
+          }
+        }
+      }
     }
     .give-away__step-four--address, .give-away__step-four--term  {
-      width: 500px;
-      font-size: 24px;
-      line-height: 32px;
+      @include mobileLabelFont() {
+      }
+      @include desktop() {
+        width: 450px;
+        font-size: 24px;
+        line-height: 32px;
+      }
       .row {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+        @include desktop() {
+          margin-bottom: 20px;
+        }
       }
       input {
-        width: 230px;
         font-size: 16px;
+        @include desktop() {
+          font-size: 24px;
+        }
       }
-      .step-four__error {
-        font-size: 16px;
-        color: red;
-      }
-      .step-four__error--time {
-        font-size: 16px;
-        color: red;
+      .step-four__error, .step-four__error--time  {
+        @include errorMessage();
+        @include desktop() {
+          font-size: 18px;
+        }
       }
       textarea {
         font-size: 16px;
-        width: 230px;
+        @include desktop() {
+          font-size: 24px;
+        }
       }
     }
   }
-  button {
-    width: 180px;
-    position: absolute;
-    bottom: 50px;
-    padding: 1.5rem 3rem;
-    &:last-of-type {
-      left: 380px;
+  #date {
+    width: 200px;
+    @include desktop() {
+      width: 312px;
+    }
+  }
+  .give-away__step-four--buttons {
+    display: flex;
+    @include desktop() {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+    }
+    button {
+      @include mobileBtn();
+      margin-right: 50px;
+      &:last-of-type {
+        margin-right: 0;
+        @include desktop() {
+          left: 215px;
+        }
+      }
+      @include desktop() {
+        @include desktopBtn();
+      }
     }
   }
 }

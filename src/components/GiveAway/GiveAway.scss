@@ -1,70 +1,125 @@
 @import '../../scss/settings/mixins';
+@import '../../scss/settings/colors';
 
 .give-away__container {
   max-width: 1900px;
+  padding: 10px 15px 20px 15px;
+  @include desktop() {
+
+  }
   .row {
-    height: 853px;
+    @include xl() {
+      height: 853px;
+    }
   }
   .give-away__image {
-    position: relative;
-    top: -95px;
-    background-image: url("../../assets/Form-Hero-Image.jpg");
-    background-position: top center;
-    background-repeat: no-repeat;
+    display: none;
+    @include xl() {
+      display: block;
+      position: relative;
+      top: -95px;
+      background-image: url("../../assets/Form-Hero-Image.jpg");
+      background-repeat: no-repeat;
+    }
   }
   .give-away__info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    left: -50px;
     max-width: 640px;
-
-    h2 {
-      @include header() {
-        margin-top: 80px;
-        margin-bottom: 30px;
-        text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    @include desktop() {
+      margin-top: 80px;
+      margin-bottom: 50px;
+  }
+    @include xxl() {
+      position: relative;
+      left: -180px;
+    }
+    h1 {
+      font-size: 28px;
+      line-height: 40px;
+      letter-spacing: -0.76px;
+      margin-bottom: 15px;
+      text-align: center;
+      @include desktop() {
+        font-size: 38px;
+        line-height: 55px;
+        margin-bottom: 25px;
       }
     }
-
+    .give-away__info--title {
+      color: $miniStepBackground;
+      font-weight: 600;
+      @include desktop() {
+        color: black;
+        font-weight: 400;
+      }
+    }
     p {
-      margin-top: 30px;
-      margin-bottom: 65px;
-      font-size: 40px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      font-size: 24px;
       line-height: 55px;
       font-weight: 300;
+      text-align: center;
+      @include desktop() {
+        font-size: 40px;
+        line-height: 55px;
+        margin-bottom: 50px;
+      }
     }
-
-    .give-away__diamonds {
+    .give-away__mini-steps {
       display: flex;
-
-      .give-away__diamond {
-        position: relative;
-        margin: 0 10px;
+      justify-content: space-between;
+      width: 80%;
+      margin: 0 auto;
+      @include desktop() {
+        display: none;
+      }
+      div {
+        color: white;
+        background-color: $miniStep;
+        width: 40px;
+        height: 40px;
         border: 0.75px solid black;
-        width: 130px;
-        height: 130px;
-        transform: rotate(45deg);
+        text-align: center;
+        line-height: 40px;
+      }
+      .mini-step-done {
+        background-color: $miniStepBackground;
+      }
+    }
+    .give-away__diamonds {
+      display: none;
+      @include desktop() {
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .diamond__number {
-          position: absolute;
-          top: 10px;
-          left: 14px;
-          transform: rotate(-45deg);
-          font-size: 1.75rem;
-        }
-
-        span {
-          transform: rotate(-45deg);
-          font-size: 20px;
-          line-height: 27px;
-          font-weight: 300;
-          text-align: center;
-          padding: 0.25rem;
+        .give-away__diamond {
+          position: relative;
+          margin: 0 10px;
+          border: 0.75px solid black;
+          width: 130px;
+          height: 130px;
+          transform: rotate(45deg);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .diamond__number {
+            position: absolute;
+            top: 10px;
+            left: 14px;
+            transform: rotate(-45deg);
+            font-size: 1.75rem;
+          }
+          span {
+            transform: rotate(-45deg);
+            font-size: 20px;
+            line-height: 27px;
+            font-weight: 300;
+            text-align: center;
+            padding: 0.25rem;
+          }
         }
       }
     }

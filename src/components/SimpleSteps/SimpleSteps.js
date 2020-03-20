@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import {Link} from "react-router-dom";
 
-const SimpleSteps = () => {
+const SimpleSteps = ({loggedUser}) => {
     return (
         <section className="simple-steps">
             <div className="simple-steps__header">
@@ -20,7 +20,7 @@ const SimpleSteps = () => {
                             <div className="simple-steps__column">
                                 <img src={require("../../assets/Icon-1.svg")} alt="icon"/>
                                 <div>Wybierz rzeczy</div>
-                                <span />
+                                <span/>
                                 <p>ubrania, zabawki, sprzęt i inne</p>
                             </div>
                         </Col>
@@ -28,7 +28,7 @@ const SimpleSteps = () => {
                             <div className="simple-steps__column">
                                 <img src={require("../../assets/Icon-2.svg")} alt="icon"/>
                                 <div>Spakuj je</div>
-                                <span />
+                                <span/>
                                 <p>skorzystaj z worków na śmieci</p>
                             </div>
                         </Col>
@@ -36,7 +36,7 @@ const SimpleSteps = () => {
                             <div className="simple-steps__column">
                                 <img src={require("../../assets/Icon-3.svg")} alt="icon"/>
                                 <div>Zdecyduj komu chcesz pomóc</div>
-                                <span />
+                                <span/>
                                 <p>wybierz zaufane miejsce</p>
                             </div>
                         </Col>
@@ -44,7 +44,7 @@ const SimpleSteps = () => {
                             <div className="simple-steps__column">
                                 <img src={require("../../assets/Icon-4.svg")} alt="icon"/>
                                 <div>Zamów kuriera</div>
-                                <span />
+                                <span/>
                                 <p>kurier przyjedzie w dogodnym terminie</p>
                             </div>
                         </Col>
@@ -52,7 +52,9 @@ const SimpleSteps = () => {
                 </Container>
             </div>
             <div className="simple-steps__button-container">
-                <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button></Link>
+                {loggedUser ?
+                    <Link to="/oddaj-rzeczy"><Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button></Link> :
+                    <Link to="/logowanie"><Button variant="outline-secondary" size="lg">ODDAJ RZECZY</Button></Link>}
             </div>
         </section>
     );
