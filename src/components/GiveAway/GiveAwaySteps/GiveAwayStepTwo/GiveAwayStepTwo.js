@@ -2,12 +2,13 @@ import React, {useState} from 'react';
 import './GiveAwayStepTwo.scss';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import {STEP_ONE, STEP_THREE} from "../../../../dictionaries/stepDictionary";
 
 const GiveAwayStepTwo = ({bags, setBags, setStep}) => {
     const [isError, setIsError] = useState(false);
 
     const handleClickStepBack = () => {
-        setStep('stepOne');
+        setStep(STEP_ONE);
     };
 
     const handleClickStepForward = () => {
@@ -15,7 +16,7 @@ const GiveAwayStepTwo = ({bags, setBags, setStep}) => {
             setIsError(true);
         } else {
             setIsError(false);
-            setStep('stepThree');
+            setStep(STEP_THREE);
         }
     };
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './GiveAwayStepFour.scss';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -6,12 +6,13 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {STEP_THREE, SUMMARY} from "../../../../dictionaries/stepDictionary";
 
 const GiveAwayStepFour = ({setUserData, setDate, setStep}) => {
     let today = new Date().toISOString().substr(0, 10);
 
     const handleClickStepBack = () => {
-        setStep('stepThree');
+        setStep(STEP_THREE);
     };
 
     return (
@@ -38,7 +39,7 @@ const GiveAwayStepFour = ({setUserData, setDate, setStep}) => {
                 })}
                 onSubmit={(values) => {
                     setUserData(values);
-                    setStep('summary');
+                    setStep(SUMMARY);
                 }}
             >
                 <Form className="give-away__step-four--form">

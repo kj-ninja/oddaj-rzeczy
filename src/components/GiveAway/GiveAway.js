@@ -7,18 +7,26 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Footer from "../Footer/Footer";
+import {STEP_ONE, STEP_TWO, STEP_THREE, STEP_FOUR, SUMMARY, THANK_YOU} from "../../dictionaries/stepDictionary";
 
 const GiveAway = () => {
     const [loggedUser, setLoggedUser] = useState(null);
+    const [step, setStep] = useState(STEP_ONE);
+
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            console.log('zalogowano');
             setLoggedUser(user);
         } else {
             setLoggedUser(null);
         }
     });
+
+    const resolveMiniStepStyle = (miniStep) => {
+        if (step >= miniStep) {
+            return 'mini-step-done';
+        }
+    };
 
     return (
         <section className="give-away">
@@ -31,11 +39,11 @@ const GiveAway = () => {
                             <img src={require('../../assets/Decoration.svg')} alt=""/>
                             <p>Wystarczą 4 proste kroki:</p>
                             <div className="give-away__mini-steps">
-                                <div>1</div>
-                                <div>2</div>
-                                <div>3</div>
-                                <div>4</div>
-                                <div>X</div>
+                                <div className="mini-step-done" >1</div>
+                                <div className={resolveMiniStepStyle(STEP_TWO)}>2</div>
+                                <div className={resolveMiniStepStyle(STEP_THREE)}>3</div>
+                                <div className={resolveMiniStepStyle(STEP_FOUR)}>4</div>
+                                <div className={resolveMiniStepStyle(SUMMARY)}>X</div>
                             </div>
                             <div className="give-away__diamonds">
                                 <div className="give-away__diamond"><span className="diamond__number">1</span><span>Wybierz rzeczy</span></div>
@@ -46,7 +54,7 @@ const GiveAway = () => {
                         </Col>
                     </Row>
                 </Container>
-            <GiveAwaySteps/>
+            <GiveAwaySteps step={step} setStep={setStep}/>
             <Footer/>
         </section>
     );

@@ -4,13 +4,14 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {STEP_FOUR, THANK_YOU} from "../../../../dictionaries/stepDictionary";
 
 const GiveAwaySummary = ({type, bags, helpGroup, localization, userData, date, setStep}) => {
     const handleClickStepBack = () => {
-        setStep('stepFour');
+        setStep(STEP_FOUR);
     };
     const handleClickStepForward = () => {
-        setStep('thankYou');
+        setStep(THANK_YOU);
     };
 
     return (

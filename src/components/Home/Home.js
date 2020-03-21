@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import * as Scroll from 'react-scroll';
 import Header from "../Header/Header";
 import ThreeColumns from "../ThreeColumns/ThreeColumns";
@@ -12,14 +12,16 @@ const Element = Scroll.Element;
 const Home = () => {
     const [loggedUser, setLoggedUser] = useState(null);
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            console.log('zalogowano');
-            setLoggedUser(user);
-        } else {
-            setLoggedUser(null);
-        }
-    });
+    useEffect(()=> {
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                setLoggedUser(user);
+            } else {
+
+                setLoggedUser(null);
+            }
+        });
+    }, []);
 
     return (
         <>

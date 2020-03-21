@@ -47,8 +47,6 @@ function SignUp() {
                         .catch(function(error) {
                         // Handle Errors here.
                         setErrorMessage(translate(error.code));
-                        // const errorCode = error.code;
-                        // const errorMessage = error.message;
                     });
                 }}
             >

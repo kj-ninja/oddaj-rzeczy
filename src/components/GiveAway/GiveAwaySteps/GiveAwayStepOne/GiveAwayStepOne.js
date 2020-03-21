@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './GiveAwayStepOne.scss';
 import Button from "react-bootstrap/Button";
+import {STEP_TWO} from "../../../../dictionaries/stepDictionary";
 
 const GiveAwayStepOne = ({type, setType, setStep}) => {
     const [isError, setIsError] = useState(false);
@@ -10,7 +11,7 @@ const GiveAwayStepOne = ({type, setType, setStep}) => {
             setIsError(true);
         } else {
             setIsError(false);
-            setStep('stepTwo');
+            setStep(STEP_TWO);
         }
     };
 

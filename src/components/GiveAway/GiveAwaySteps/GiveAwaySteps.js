@@ -10,10 +10,10 @@ import GiveAwayStepFour from "./GiveAwayStepFour/GiveAwayStepFour";
 import GiveAwaySummary from "./GiveAwaySummary/GiveAwaySummary";
 import GiveAwayWarning from "../GiveAwayWarning/GiveAwayWarning";
 import GiveAwayThankYou from "./GiveAwayThankYou/GiveAwayThankYou";
+import {STEP_ONE, STEP_TWO, STEP_THREE, STEP_FOUR, SUMMARY, THANK_YOU} from "../../../dictionaries/stepDictionary";
 
-const GiveAwaySteps = () => {
+const GiveAwaySteps = ({step, setStep}) => {
     let today = new Date().toISOString().substr(0, 10);
-    const [step, setStep] = useState('stepOne');
     const [type, setType] = useState('');
     const [bags, setBags] = useState('');
     const [localization, setLocalization] = useState('');
@@ -25,13 +25,13 @@ const GiveAwaySteps = () => {
     let stepNumber;
     let warningResult = <GiveAwayWarning step={step}/>;
 
-    if (step === 'stepOne') {
+    if (step === STEP_ONE) {
         result = <GiveAwayStepOne type={type} setType={setType} setStep={setStep}/>;
         stepNumber = <h4>Krok 1/4</h4>;
-    } else if (step === 'stepTwo') {
+    } else if (step === STEP_TWO) {
         result = <GiveAwayStepTwo bags={bags} setBags={setBags} setStep={setStep}/>;
         stepNumber = <h4>Krok 2/4</h4>;
-    } else if (step === 'stepThree') {
+    } else if (step === STEP_THREE) {
         result = <GiveAwayStepThree setLocalization={setLocalization}
                                     setStep={setStep}
                                     setHelpGroups={setHelpGroups}
@@ -39,10 +39,10 @@ const GiveAwaySteps = () => {
                                     localization={localization}
                                     localizationSpecific={localizationSpecific} />;
         stepNumber = <h4>Krok 3/4</h4>;
-    } else if (step === 'stepFour') {
+    } else if (step === STEP_FOUR) {
         result = <GiveAwayStepFour setUserData={setUserData} setDate={setDate} setStep={setStep} userData={userData}/>;
         stepNumber = <h4>Krok 4/4</h4>;
-    } else if (step === 'summary') {
+    } else if (step === SUMMARY) {
         result = <GiveAwaySummary type={type}
                                   bags={bags}
                                   helpGroup={helpGroup}
@@ -51,7 +51,7 @@ const GiveAwaySteps = () => {
                                   date={date}
                                   setStep={setStep} />;
         stepNumber = null;
-    } else if (step === 'thankYou') {
+    } else if (step === THANK_YOU) {
         result = <GiveAwayThankYou/>;
         stepNumber = null;
     }

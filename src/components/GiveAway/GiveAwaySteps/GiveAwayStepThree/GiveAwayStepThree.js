@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './GiveAwayStepThree.scss';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import {STEP_TWO, STEP_FOUR} from "../../../../dictionaries/stepDictionary";
 
 const GiveAwayStepThree = ({setLocalization, setStep, setHelpGroups, setLocalizationSpecific, localizationSpecific, localization}) => {
     const [checkboxesError, setCheckboxesError] = useState(false);
@@ -13,7 +14,7 @@ const GiveAwayStepThree = ({setLocalization, setStep, setHelpGroups, setLocaliza
     const [fifthCheck, setFifthCheck] = useState('');
 
     const handleClickStepBack = () => {
-        setStep('stepTwo');
+        setStep(STEP_TWO);
     };
     const handleClickStepForward = () => {
         let result = [];
@@ -41,7 +42,7 @@ const GiveAwayStepThree = ({setLocalization, setStep, setHelpGroups, setLocaliza
             return setLocalizationError(true);
         }
         else {
-            setStep('stepFour');
+            setStep(STEP_FOUR);
             setHelpGroups(result);
         }
     };

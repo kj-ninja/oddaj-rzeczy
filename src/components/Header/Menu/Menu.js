@@ -23,7 +23,6 @@ const Menu= ({loggedUser, setLoggedUser}) => {
 
     const handleLogout = () => {
         firebase.auth().signOut().then(function() {
-            console.log('wylogowano');
             setLoggedUser(null);
         }).catch(function(error) {
             console.log(error.message);

@@ -31,7 +31,6 @@ const Login = () => {
                     onSubmit={(values) => {
                         firebase.auth().signInWithEmailAndPassword(values.email, values.password)
                             .then(res => {
-                                console.log('zalogowano');
                                 window.location.href = 'http://localhost:3000/#/';
                             })
                             .catch(function (error) {
