@@ -12,7 +12,6 @@ import {STEP_ONE, STEP_TWO, STEP_THREE, STEP_FOUR, SUMMARY, THANK_YOU} from "../
 const GiveAway = () => {
     const [loggedUser, setLoggedUser] = useState(null);
     const [step, setStep] = useState(STEP_ONE);
-    const [mobileThankYou, setMobileThankYou] = useState(false);
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -22,21 +21,16 @@ const GiveAway = () => {
         }
     });
 
-    if (step === THANK_YOU) {
-        setMobileThankYou(true);
-    }
-
     const resolveMiniStepStyle = (miniStep) => {
         if (step >= miniStep) {
             return 'mini-step-done';
         }
     };
 
-
     return (
-        <section className={mobileThankYou ? "give-away mobileThankYouOff" : "give-away"}>
+        <section className="give-away">
             <Menu loggedUser={loggedUser} />
-            <Container className="give-away__container">
+            <Container className={step === THANK_YOU ? "give-away mobileThankYouOff" : "give-away__container"}>
                     <Row>
                         <Col className="give-away__image"/>
                         <Col className="give-away__info">
