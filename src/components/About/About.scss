@@ -41,7 +41,7 @@
     box-shadow: 0px -5px 30px #00000029;
     .about__info {
       padding: 35px 20px;
-      height: 60vh;
+      height: 935px;
       p {
         font-size: 1.875rem;
         line-height: 54px;
@@ -55,6 +55,7 @@
     }
     .about__image {
       order: -1;
+      height: 935px;
     }
   }
 }

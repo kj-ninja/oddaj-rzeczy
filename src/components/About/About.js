@@ -8,7 +8,7 @@ const About = () => {
     return (
         <Container className="about__container">
             <Row>
-                <Col xs={12} lg={12} xl={6} className="about__info d-flex align-items-center justify-content-center">
+                <Col xs={12} lg={6} xl={6} className="about__info d-flex align-items-center justify-content-center">
                     <div className="d-flex flex-column align-items-center justify-content-center">
                         <h2>O nas</h2>
                         <img src={require("../../assets/Decoration.svg")} alt=""/>
@@ -19,7 +19,7 @@ const About = () => {
                         </div>
                     </div>
                 </Col>
-                <Col xs={12} lg={12} xl={6} className="about__image"/>
+                <Col xs={12} lg={6} xl={6} className="about__image"/>
             </Row>
         </Container>
     );
