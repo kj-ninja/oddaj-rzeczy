@@ -1,6 +1,10 @@
 @import '../../scss/settings/mixins';
 @import '../../scss/settings/colors';
 
+.mobileThankYouOff {
+  display: none;
+}
+
 .give-away__container {
   max-width: 1900px;
   padding: 10px 15px 20px 15px;
@@ -9,12 +13,12 @@
   }
   .row {
     @include xl() {
-      height: 853px;
+      height: 777px;
     }
   }
   .give-away__image {
     display: none;
-    @include xl() {
+    @include xxl() {
       display: block;
       position: relative;
       top: -95px;

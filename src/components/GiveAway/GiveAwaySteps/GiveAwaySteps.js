@@ -56,7 +56,7 @@ const GiveAwaySteps = ({step, setStep}) => {
         stepNumber = null;
     }
 
-    if (step === 'summary' || step === 'thankYou') {
+    if (step === SUMMARY || step === THANK_YOU) {
         warningResult = null
     }
 
