@@ -13,6 +13,15 @@ const GiveAwaySummary = ({type, bags, helpGroup, localization, userData, date, s
     const handleClickStepForward = () => {
         setStep(THANK_YOU);
     };
+    const howManyBags = (bags) => {
+        if (+bags === 1) {
+            return 'worek';
+        } else if (+bags === 5) {
+            return 'worków'
+        } else {
+            return 'worki';
+        }
+    };
 
     return (
         <div className="give-away__summary">
@@ -20,7 +29,7 @@ const GiveAwaySummary = ({type, bags, helpGroup, localization, userData, date, s
             <h3>Oddajesz:</h3>
             <div className="give-away__summary--gives">
                 <img src={require('../../../../assets/Icon-1.svg')} width="50px" alt=""/>
-                {bags} worki {type}, {helpGroup.join(', ')}
+                {bags} {howManyBags(bags)} {type}, {helpGroup.join(', ')}
             </div>
             <div className="give-away__summary--gives">
                 <img src={require('../../../../assets/Icon-4.svg')} width="50px" alt=""/>

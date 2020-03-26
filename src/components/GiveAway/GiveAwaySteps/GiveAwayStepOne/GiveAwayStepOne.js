@@ -24,25 +24,25 @@ const GiveAwayStepOne = ({type, setType, setStep}) => {
         <div className="give-away__step-one">
             <h2>Zaznacz co chcesz oddać:</h2>
             <div className="custom-control custom-radio">
-                <input type="radio" id="customRadio1" className="custom-control-input" checked={type === 'ubrania w dobrym stanie'}  value='ubrania w dobrym stanie' onChange={(e)=>handleRadio(e)} />
+                <input type="radio" id="customRadio1" className="custom-control-input" checked={type === 'ubrań w dobrym stanie'}  value='ubrań w dobrym stanie' onChange={(e)=>handleRadio(e)} />
                 <label className="custom-control-label" htmlFor="customRadio1">
                     ubrania, które nadają się do ponownego użycia
                 </label>
             </div>
             <div className="custom-control custom-radio">
-                <input type="radio" id="customRadio2" className="custom-control-input" checked={type === 'ubrania, do wyrzucenia'} value='ubrania, do wyrzucenia' onChange={(e)=>handleRadio(e)} />
+                <input type="radio" id="customRadio2" className="custom-control-input" checked={type === 'ubrań, do wyrzucenia'} value='ubrań, do wyrzucenia' onChange={(e)=>handleRadio(e)} />
                 <label className="custom-control-label" htmlFor="customRadio2">
                     ubrania, do wyrzucenia
                 </label>
             </div>
             <div className="custom-control custom-radio">
-                <input type="radio" id="customRadio3" className="custom-control-input" checked={type === 'zabawki'} value='zabawki' onChange={(e)=>handleRadio(e)} />
+                <input type="radio" id="customRadio3" className="custom-control-input" checked={type === 'zabawek'} value='zabawek' onChange={(e)=>handleRadio(e)} />
                 <label className="custom-control-label" htmlFor="customRadio3">
                     zabawki
                 </label>
             </div>
             <div className="custom-control custom-radio">
-                <input type="radio" id="customRadio4" className="custom-control-input" checked={type === 'książki'} value='książki' onChange={(e)=>handleRadio(e)} />
+                <input type="radio" id="customRadio4" className="custom-control-input" checked={type === 'książek'} value='książek' onChange={(e)=>handleRadio(e)} />
                 <label className="custom-control-label" htmlFor="customRadio4">
                     książki
                 </label>
