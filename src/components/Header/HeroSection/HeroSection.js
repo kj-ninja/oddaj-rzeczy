@@ -25,7 +25,7 @@ const HeroSection = ({loggedUser}) => {
                     <Col className="hero__image"/>
                     <Col className="hero__action">
                         <h1>Zacznij pomagać!<br/> Oddaj niechciane rzeczy w zaufane ręce</h1>
-                        <img src={require("../../../assets/Decoration.svg")} alt=""/>
+                        <img src={require("../../../assets/Decoration.svg")} alt="decoration"/>
                         <div className="hero__buttons">
                             {loggedUser ? <Link to="/oddaj-rzeczy"><Button variant="outline-secondary" size="lg">ODDAJ
                                     RZECZY</Button></Link> :

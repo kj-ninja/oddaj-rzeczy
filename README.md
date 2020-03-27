@@ -1,5 +1,5 @@
 
-# oddaj-rzeczy
+# Oddaj rzeczy
 
 ## Introduction
 
@@ -15,7 +15,7 @@ This project is part of Portfolio Lab from `Coders Lab`
 ## Features
 
 The application consists of a responsive landing page with
-features like pagination, forms, login/register validation also authentication handle by `Firebase`.
+features like pagination, forms, login/register validation also authentication handled by `Firebase`.
 
 
 ## Technologies
@@ -28,6 +28,7 @@ features like pagination, forms, login/register validation also authentication h
 * also libraries like:
     * react-router
     * react-scroll
+    * react-bootstrap
     * formik and yup
     * axios
     

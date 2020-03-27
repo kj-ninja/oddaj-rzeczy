@@ -10,7 +10,7 @@ const Logout = () => {
             <Menu/>
             <div className="logout__container">
                 <h2>Wylogowanie nastąpiło <br/> pomyślnie!</h2>
-                <img src={require('../../assets/Decoration.svg')} alt=""/>
+                <img src={require('../../assets/Decoration.svg')} alt="decoration"/>
                 <Link to="/"><Button type="submit" variant="outline-secondary" size="lg">Strona główna</Button></Link>
             </div>
         </>

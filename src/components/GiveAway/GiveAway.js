@@ -35,14 +35,14 @@ const GiveAway = () => {
                         <Col className="give-away__image"/>
                         <Col className="give-away__info">
                             <h1>Oddaj rzeczy, których już nie chcesz <span className="give-away__info--title">POTRZEBUJĄCYM</span></h1>
-                            <img src={require('../../assets/Decoration.svg')} alt=""/>
+                            <img src={require('../../assets/Decoration.svg')} alt="decoration"/>
                             <p>Wystarczą 4 proste kroki:</p>
                             <div className="give-away__mini-steps">
                                 <div className="mini-step-done" >1</div>
                                 <div className={resolveMiniStepStyle(STEP_TWO)}>2</div>
                                 <div className={resolveMiniStepStyle(STEP_THREE)}>3</div>
                                 <div className={resolveMiniStepStyle(STEP_FOUR)}>4</div>
-                                <div className={resolveMiniStepStyle(SUMMARY)}>X</div>
+                                <div className={resolveMiniStepStyle(SUMMARY)}><i className="fas fa-check"/></div>
                             </div>
                             <div className="give-away__diamonds">
                                 <div className="give-away__diamond"><span className="diamond__number">1</span><span>Wybierz rzeczy</span></div>

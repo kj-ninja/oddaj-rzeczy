@@ -18,7 +18,7 @@ const Login = () => {
             <Menu/>
             <div className="login__container">
                 <h2>Zaloguj się</h2>
-                <img src={require('../../assets/Decoration.svg')} alt=""/>
+                <img src={require('../../assets/Decoration.svg')} alt="decoration"/>
                 <Formik
                     initialValues={{email: '', password: ''}}
                     validationSchema={Yup.object({

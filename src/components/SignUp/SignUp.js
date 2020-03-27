@@ -54,7 +54,7 @@ function SignUp() {
                     return (
                         <div className="signup__container">
                             <h2>Załóż konto</h2>
-                            <img src={require('../../assets/Decoration.svg')} alt=""/>
+                            <img src={require('../../assets/Decoration.svg')} alt="decoration"/>
                             <form onSubmit={handleSubmit} className="signup__form">
                                 <label htmlFor="email">Email</label>
                                     <input

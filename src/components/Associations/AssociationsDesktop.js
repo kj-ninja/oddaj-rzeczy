@@ -31,7 +31,7 @@ const AssociationsDesktop = ({result, setAssociation, setCurrentPage}) => {
     return (
         <section className="associations__desktop">
             <h2>Komu pomagamy?</h2>
-            <img src={require("../../assets/Decoration.svg")} alt=""/>
+            <img src={require("../../assets/Decoration.svg")} alt="decoration"/>
             <div className="associations__desktop--buttons">
                 <Button onClick={() => handleFoundations()} variant="outline-secondary" size="lg" className={isFoundationsActive ? 'active' : ''}>Fundacjom</Button>
                 <Button onClick={() => handleOrganizations()} variant="outline-secondary" size="lg" className={isOrganizationsActive ? 'active' : ''}>Organizacjom pozarządowym</Button>

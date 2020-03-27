@@ -11,14 +11,14 @@ const SimpleSteps = ({loggedUser}) => {
         <section className="simple-steps">
             <div className="simple-steps__header">
                 <h2>Wystarczą 4 proste kroki</h2>
-                <img src={require("../../assets/Decoration.svg")} alt=""/>
+                <img src={require("../../assets/Decoration.svg")} alt="decoration"/>
             </div>
             <div className="simple-steps__background">
                 <Container className="simple-steps__container">
                     <Row>
                         <Col xs={6} lg={3}>
                             <div className="simple-steps__column">
-                                <img src={require("../../assets/Icon-1.svg")} alt="icon"/>
+                                <img src={require("../../assets/Icon-1.svg")} alt="stuff icon"/>
                                 <div>Wybierz rzeczy</div>
                                 <span/>
                                 <p>ubrania, zabawki, sprzęt i inne</p>
@@ -26,7 +26,7 @@ const SimpleSteps = ({loggedUser}) => {
                         </Col>
                         <Col xs={6} lg={3}>
                             <div className="simple-steps__column">
-                                <img src={require("../../assets/Icon-2.svg")} alt="icon"/>
+                                <img src={require("../../assets/Icon-2.svg")} alt="bags icon"/>
                                 <div>Spakuj je</div>
                                 <span/>
                                 <p>skorzystaj z worków na śmieci</p>
@@ -34,7 +34,7 @@ const SimpleSteps = ({loggedUser}) => {
                         </Col>
                         <Col xs={6} lg={3}>
                             <div className="simple-steps__column">
-                                <img src={require("../../assets/Icon-3.svg")} alt="icon"/>
+                                <img src={require("../../assets/Icon-3.svg")} alt="founding icon"/>
                                 <div>Zdecyduj komu chcesz pomóc</div>
                                 <span/>
                                 <p>wybierz zaufane miejsce</p>
@@ -42,7 +42,7 @@ const SimpleSteps = ({loggedUser}) => {
                         </Col>
                         <Col xs={6} lg={3}>
                             <div className="simple-steps__column">
-                                <img src={require("../../assets/Icon-4.svg")} alt="icon"/>
+                                <img src={require("../../assets/Icon-4.svg")} alt="recycle icon"/>
                                 <div>Zamów kuriera</div>
                                 <span/>
                                 <p>kurier przyjedzie w dogodnym terminie</p>
