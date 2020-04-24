@@ -42,4 +42,4 @@ features like pagination, forms, login/register validation also authentication h
 
 ## Demo
 
-This section in progress...
+Check out YouTube demo movie: https://youtu.be/mNmAUjRLbQk
