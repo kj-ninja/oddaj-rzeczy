@@ -26,7 +26,7 @@ const Schema = Yup.object().shape({
     })
 });
 
-function SignUp() {
+function SignUp(props) {
     const [errorMessage, setErrorMessage] = useState(null);
 
     return (
@@ -42,7 +42,8 @@ function SignUp() {
                 onSubmit={(values) => {
                     firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
                         .then(res => {
-                            window.location.href = 'http://localhost:3000/#/';
+                            console.log(res);
+                            props.history.replace('/')
                         })
                         .catch(function(error) {
                         // Handle Errors here.

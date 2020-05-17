@@ -20,8 +20,8 @@ function App() {
                 <ScrollToTop>
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/logowanie" component={Login}/>
-                        <Route path="/rejestracja" component={SignUp}/>
+                        <Route path="/logowanie" render={(props)=><Login {...props}/>}/>
+                        <Route path="/rejestracja" render={(props)=><SignUp {...props}/>}/>
                         <Route path="/wylogowano" component={Logout} />
                         <Route path="/oddaj-rzeczy" component={GiveAway} />
                         <Route component={NotFound}/>

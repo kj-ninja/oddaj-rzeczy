@@ -5,7 +5,7 @@ import Organizations from "./Organizations/Organizations";
 import Locals from "./Locals/Locals";
 import Pagination from "./Pagination/Pagination";
 import AssociationsDesktop from "./AssociationsDesktop";
-import {db} from '../Firebase/Firebase';
+import {db} from '../Firebase/firebase';
 import AssociationsMobile from "./AssociationsMobile";
 
 const Associations = () => {

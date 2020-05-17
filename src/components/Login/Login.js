@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 import {Link} from 'react-router-dom';
 import {translate} from '../../functions/translate';
 
-const Login = () => {
+const Login = (props) => {
     const [errorMessage, setErrorMessage] = useState(null);
 
     return (
@@ -18,7 +18,6 @@ const Login = () => {
             <Menu/>
             <div className="login__container">
                 <h2>Zaloguj się</h2>
-                <img src={require('../../assets/Decoration.svg')} alt="decoration"/>
                 <Formik
                     initialValues={{email: '', password: ''}}
                     validationSchema={Yup.object({
@@ -31,7 +30,7 @@ const Login = () => {
                     onSubmit={(values) => {
                         firebase.auth().signInWithEmailAndPassword(values.email, values.password)
                             .then(res => {
-                                window.location.href = 'http://localhost:3000/#/';
+                                props.history.replace('/')
                             })
                             .catch(function (error) {
                                 setErrorMessage(translate(error.code));

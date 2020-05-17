@@ -17,7 +17,6 @@ const Home = () => {
             if (user) {
                 setLoggedUser(user);
             } else {
-
                 setLoggedUser(null);
             }
         });
