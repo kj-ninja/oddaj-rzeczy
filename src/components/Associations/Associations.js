@@ -17,7 +17,6 @@ const Associations = () => {
     const [postsPerPage] = useState(3);
 
     useEffect(()=> {
-        console.log('fetch');
         db.collection("foundations").get().then((DocumentSnapshot) => {
             DocumentSnapshot.forEach((doc) => {
                 setFoundations(prevState => [...prevState, doc.data()]);

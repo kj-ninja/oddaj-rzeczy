@@ -7,7 +7,6 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import Menu from "../Header/Menu/Menu";
-import {Link} from 'react-router-dom';
 import {translate} from "../../functions/translate";
 
 const Schema = Yup.object().shape({
@@ -42,7 +41,6 @@ function SignUp(props) {
                 onSubmit={(values) => {
                     firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
                         .then(res => {
-                            console.log(res);
                             props.history.replace('/')
                         })
                         .catch(function(error) {
@@ -95,7 +93,6 @@ function SignUp(props) {
                                 </p>
                                 <div className="signup__buttons">
                                     <Button type="submit" variant="outline-secondary" size="lg">Załóż konto</Button>
-                                    <Link to="/logowanie"><Button variant="outline-secondary" size="lg">Zaloguj się</Button></Link>
                                 </div>
                             </form>
                         </div>

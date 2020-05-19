@@ -7,7 +7,6 @@ import "firebase/auth";
 import "firebase/firestore";
 import Menu from "../Header/Menu/Menu";
 import Button from "react-bootstrap/Button";
-import {Link} from 'react-router-dom';
 import {translate} from '../../functions/translate';
 
 const Login = (props) => {
@@ -51,8 +50,6 @@ const Login = (props) => {
                         </p>
                         <div className="login__buttons">
                             <Button type="submit" variant="outline-secondary" size="lg">Zaloguj się</Button>
-                            <Link to="/rejestracja"><Button variant="outline-secondary" size="lg">Załóż
-                                konto</Button></Link>
                         </div>
                     </Form>
                 </Formik>
