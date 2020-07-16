@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
@@ -11,7 +11,7 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 function App() {
     return (
         <>
-            <HashRouter>
+            <BrowserRouter>
                 <ScrollToTop>
                     <Switch>
                         <Route exact path="/" component={Home} />
@@ -22,7 +22,7 @@ function App() {
                         <Route component={NotFound}/>
                     </Switch>
                 </ScrollToTop>
-            </HashRouter>
+            </BrowserRouter>
         </>
     );
 }

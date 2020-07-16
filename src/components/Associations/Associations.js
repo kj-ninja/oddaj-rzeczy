@@ -91,7 +91,6 @@ const Associations = () => {
         <>
             <AssociationsMobile />
             <AssociationsDesktop result={result} setAssociation={setAssociation} setCurrentPage={setCurrentPage} />
-
         </>
     );
 };
